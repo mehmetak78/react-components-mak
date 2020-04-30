@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital@1&display=swap');
 
-
 $color-white: #ffffff;
 $color-black: #000000;
-
-$color-bg-alert-bg: #929D5F;;
+$color-menu-hover: #ddffdd;
 
 $color-button1: #598236;
 $color-button2: #829D5F;
 $color-alert: #396206;
+
+$color-bg-alert-bg: #929D5F;
 
 
 
@@ -27,5 +27,7 @@ $color-alert: #396206;
   background-color: $color;
   color: set-text-color($color)
 }
+
+
 
 

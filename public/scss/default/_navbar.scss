@@ -3,8 +3,8 @@
 $color-text-navbar:  #ffffff;
 $color-text-navbar-hover: #bbffbb;
 
-$color-bg-navbar1:#396206;
-$color-bg-navbar2:#829D5F;
+$color-bg-navbar1:#2222dd;
+$color-bg-navbar2:#333377;
 
 $font-navbar: 'Acme', sans-serif;
 
@@ -28,7 +28,7 @@ $font-navbar: 'Acme', sans-serif;
       height: inherit;
     }
   }
-  .nav-links {
+  .nav-items {
     justify-self: flex-start;
     display: flex;
     justify-content: center;
@@ -39,7 +39,7 @@ $font-navbar: 'Acme', sans-serif;
       margin-left: 1.5em;
       margin-bottom: 0;
       position: relative;
-      .nav-link-item {
+      .nav-item {
         color: $color-text-navbar;
         text-decoration: none;
         &::before {
@@ -84,7 +84,8 @@ $font-navbar: 'Acme', sans-serif;
           color: $color-text-navbar;
           padding: 0.6rem 1.8rem;
           text-decoration: none;
-          display: block;
+          display: flex;
+          flex-direction: column;
           &:hover{
             color: $color-text-navbar-hover;
             background: rgba($color-bg-navbar1,1);

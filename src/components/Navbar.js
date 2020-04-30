@@ -18,7 +18,7 @@ const Navbar = () => {
   }
 
   const toggleClicked = () => {
-    const nav_links = document.querySelector(".navbar .nav-links");
+    const nav_links = document.querySelector(".navbar .nav-items");
     nav_links.style.transition = "transform 400ms ease-in-out";
     nav_links.classList.toggle("nav-active");
     const styles = window.getComputedStyle(nav_links);
@@ -42,7 +42,7 @@ const Navbar = () => {
     if (!mql.matches && toggleButtonOpened) {
       console.log("Matched");
       toggleButtonOpened = false;
-      const nav_links = document.querySelector(".navbar .nav-links");
+      const nav_links = document.querySelector(".navbar .nav-items");
       nav_links.classList.remove("nav-active");
       const toggle_btn = document.querySelector(".toggle-btn");
       toggle_btn.classList.remove("toggle-btn-open");
@@ -67,7 +67,7 @@ const Navbar = () => {
           elem.classList.toggle("dropdown-content_active");
         }
       });
-      const nav_links = document.querySelector(".navbar .nav-links");
+      const nav_links = document.querySelector(".navbar .nav-items");
       const styles = window.getComputedStyle(nav_links);
       const height = parseFloat(styles['height']) ;
       const mainPage = document.querySelector(".mainPage");
@@ -86,11 +86,11 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <a className="nav-brand" href="#"><img src={logo} alt="" /><span></span></a>
-      <ul className="nav-links">
-        <li><a className="nav-link-item" onClick={menuClicked} href="#">Ana Sayfa</a></li>
-        <li><a className="nav-link-item" onClick={menuClicked} href="#">About</a></li>
+      <ul className="nav-items">
+        <li><a className="nav-item" onClick={menuClicked} href="#">Ana Sayfa</a></li>
+        <li><a className="nav-item" onClick={menuClicked} href="#">About</a></li>
         <li onClick={dropDownClicked}>
-          <div className="nav-link-item dropdown"  >Menu 1 &#9662;
+          <div className="nav-item dropdown"  >Menu 1 &#9662;
             <div className="dropdown-content ">
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
@@ -99,14 +99,14 @@ const Navbar = () => {
           </div>
         </li>
         <li onClick={dropDownClicked}>
-          <div className="nav-link-item dropdown"  >Menu 2 &#9662;
+          <div className="nav-item dropdown"  >Menu 2 &#9662;
             <div className="dropdown-content ">
               <a href="#">Link 4</a>
               <a href="#">Link 5</a>
             </div>
           </div>
         </li>
-        <li><a className="nav-link-item" onClick={menuClicked} href="#">Content</a></li>
+        <li><a className="nav-item" onClick={menuClicked} href="#">Content</a></li>
       </ul>
       <div className="nav-avatar">
         <div className="nav-avatar-text">M</div>
