@@ -7,12 +7,12 @@ let toggleButtonOpened = false;
 
 const Navbar = () => {
   const closeAllDropDown = () => {
-    const dropdown = document.querySelectorAll(".dropdown");
+    const dropdown = document.querySelectorAll(".nav-item");
     dropdown.forEach((dd) => {
-      const dropdownContents = dd.querySelectorAll(".dropdown-content");
-      dropdownContents.forEach((elem) => {
-        elem.classList.remove("dropdown-content_active");
-      });
+      const dropdownContent = dd.querySelector(".dropdown-content");
+      if (dropdownContent) {
+        dropdownContent.classList.remove("dropdown-content-active");
+      }
     })
   }
   const toggleClicked = () => {
@@ -58,11 +58,11 @@ const Navbar = () => {
       const dropdownContents = document.querySelectorAll(".dropdown-content");
       dropdownContents.forEach((elem) => {
         const dropdownContent = e.target.querySelector(".dropdown-content");
-        dropdownContent.classList.toggle("dropdown-content_active");
+        dropdownContent.classList.toggle("dropdown-content-active");
         if (elem !== dropdownContent) {
-          elem.classList.remove("dropdown-content_active");
+          elem.classList.remove("dropdown-content-active");
         } else {
-          elem.classList.toggle("dropdown-content_active");
+          elem.classList.toggle("dropdown-content-active");
         }
       });
       const nav_links = document.querySelector(".navbar .nav-items");
@@ -91,25 +91,21 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <a className="nav-brand" href="#"><img src={logo} alt="" /><span></span></a>
+      <div className="nav-brand"><img src={logo} alt="MAK" /></div>
       <div className="nav-items">
         <a className="nav-item" onClick={menuClicked} href="#">Ana Sayfa</a>
         <a className="nav-item" onClick={menuClicked} href="#">About</a>
-
-          <div onClick={dropDownClicked} className="nav-item dropdown"  >Menu 1 &#9662;
-            <div className="dropdown-content ">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-
+        <div onClick={dropDownClicked} className="nav-item "  >Menu 1 &#9662;
+          <div className="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
         </div>
-        <div onClick={dropDownClicked}>
-          <div className="nav-item dropdown"  >Menu 2 &#9662;
-            <div className="dropdown-content ">
+          <div onClick={dropDownClicked} className="nav-item "  >Menu 2 &#9662;
+            <div className="dropdown-content">
               <a href="#">Link 4</a>
               <a href="#">Link 5</a>
-            </div>
           </div>
         </div>
         <a className="nav-item" onClick={menuClicked} href="#">Content</a>
@@ -118,7 +114,7 @@ const Navbar = () => {
         <div className="nav-avatar-text">M</div>
       </div>
       <div className="nav-btn">
-        <ToggleButton id={"toggleButton2"} toggleClicked={toggleClicked}/>
+        <ToggleButton id={"toggleButtonNavbar"} toggleClicked={toggleClicked}/>
       </div>
     </div>
   );

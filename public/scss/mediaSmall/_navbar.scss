@@ -24,36 +24,36 @@
       list-style: none;
       z-index: 999;
 
-        .nav-item {
-          margin: 0;
-          padding: 0.8rem;
-          display: block;
-          opacity: 1;
-          transition: opacity 400ms ease-in-out;
-          &::before {
-           //border: none;
-          }
-          &:hover{
-            background: $color-bg-navbar1;
-          }
-          .dropdown-content {
-            position: relative;
-            background: none;
-            box-shadow: none;
-            width: 100%;
+      .nav-item {
+        margin: 0;
+        padding: 0.8rem;
+        display: block;
+        opacity: 1;
+        transition: opacity 400ms ease-in-out;
+        &::before {
+         //border: none;
+        }
+        &:hover{
+          background: $color-bg-navbar1;
+        }
+        .dropdown-content {
+          position: relative;
+          background: none;
+          box-shadow: none;
+          width: 100%;
 
-            &:first-child {
-              margin-top: 0.8em;
+          &:first-child {
+            margin-top: 0.8em;
 
-            }
-            a {
-              margin:0  -0.8rem;
-              &:hover{
-                background: rgba($color-bg-navbar2,0.4);
-              }
+          }
+          a {
+            margin:0  -0.8rem;
+            &:hover{
+              background: rgba($color-bg-navbar2,0.4);
             }
           }
         }
+      }
 
 
     }

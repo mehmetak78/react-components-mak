@@ -2,11 +2,10 @@
 
 $color-text-navbar:  #ffffff;
 $color-text-navbar-hover: #bbffff;
-
 $color-bg-navbar1:#2222dd;
 $color-bg-navbar2:#333377;
-
 $font-navbar: 'Acme', sans-serif;
+$font-size-navbar: 1.2rem;
 
 .navbar {
   background: linear-gradient(180deg, $color-bg-navbar1 0%, $color-bg-navbar2 100%);
@@ -17,7 +16,7 @@ $font-navbar: 'Acme', sans-serif;
   justify-content: center;
   text-align: center;
   font-family: $font-navbar;
-  font-size: 1.2rem;
+  font-size: $font-size-navbar;
   color: $color-text-navbar;
   margin: 0;
   padding: 0;
@@ -35,8 +34,8 @@ $font-navbar: 'Acme', sans-serif;
     align-items: center;
     .nav-item {
       padding: 0;
-      list-style: none;
       margin-left: 1.5em;
+      cursor: pointer;
       margin-bottom: 0;
       position: relative;
       color: $color-text-navbar;
@@ -60,11 +59,7 @@ $font-navbar: 'Acme', sans-serif;
         }
       }
       .dropdown {
-        display: inline-block;
-        cursor: pointer;
-        &::after {
-     //     content: '\00a0\25be';
-        }
+//        display: inline-block;
       }
       .dropdown-content {
         display: none;
@@ -89,7 +84,7 @@ $font-navbar: 'Acme', sans-serif;
           }
         }
       }
-      .dropdown-content_active {
+      .dropdown-content-active {
         display: block;
       }
     }
