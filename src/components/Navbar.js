@@ -92,18 +92,17 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <a className="nav-brand" href="#"><img src={logo} alt="" /><span></span></a>
-      <ul className="nav-items">
+      <div className="nav-items">
+        <a className="nav-item" onClick={menuClicked} href="#">Ana Sayfa</a>
+        <a className="nav-item" onClick={menuClicked} href="#">About</a>
 
-          <a className="nav-item" onClick={menuClicked} href="#">Ana Sayfa</a>
-          <a className="nav-item" onClick={menuClicked} href="#">About</a>
-        <div onClick={dropDownClicked}>
-          <div className="nav-item dropdown"  >Menu 1 &#9662;
+          <div onClick={dropDownClicked} className="nav-item dropdown"  >Menu 1 &#9662;
             <div className="dropdown-content ">
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
             </div>
-          </div>
+
         </div>
         <div onClick={dropDownClicked}>
           <div className="nav-item dropdown"  >Menu 2 &#9662;
@@ -114,7 +113,7 @@ const Navbar = () => {
           </div>
         </div>
         <a className="nav-item" onClick={menuClicked} href="#">Content</a>
-      </ul>
+      </div>
       <div className="nav-avatar">
         <div className="nav-avatar-text">M</div>
       </div>
