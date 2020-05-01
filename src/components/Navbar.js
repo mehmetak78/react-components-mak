@@ -54,6 +54,7 @@ const Navbar = () => {
 
   const dropDownClicked = (e) => {
     if (e.target.tagName === "DIV") {
+      console.log(e.target.tagName);
       const dropdownContents = document.querySelectorAll(".dropdown-content");
       dropdownContents.forEach((elem) => {
         const dropdownContent = e.target.querySelector(".dropdown-content");
@@ -84,13 +85,10 @@ const Navbar = () => {
     <div className="navbar">
       <a className="nav-brand" href="#"><img src={logo} alt="" /><span></span></a>
       <ul className="nav-items">
-        <li>
+
           <a className="nav-item" onClick={menuClicked} href="#">Ana Sayfa</a>
-        </li>
-        <li>
           <a className="nav-item" onClick={menuClicked} href="#">About</a>
-        </li>
-        <li onClick={dropDownClicked}>
+        <div onClick={dropDownClicked}>
           <div className="nav-item dropdown"  >Menu 1 &#9662;
             <div className="dropdown-content ">
               <a href="#">Link 1</a>
@@ -98,16 +96,16 @@ const Navbar = () => {
               <a href="#">Link 3</a>
             </div>
           </div>
-        </li>
-        <li onClick={dropDownClicked}>
+        </div>
+        <div onClick={dropDownClicked}>
           <div className="nav-item dropdown"  >Menu 2 &#9662;
             <div className="dropdown-content ">
               <a href="#">Link 4</a>
               <a href="#">Link 5</a>
             </div>
           </div>
-        </li>
-        <li><a className="nav-item" onClick={menuClicked} href="#">Content</a></li>
+        </div>
+        <a className="nav-item" onClick={menuClicked} href="#">Content</a>
       </ul>
       <div className="nav-avatar">
         <div className="nav-avatar-text">M</div>

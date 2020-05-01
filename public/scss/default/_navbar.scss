@@ -33,32 +33,30 @@ $font-navbar: 'Acme', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    li {
+    .nav-item {
       padding: 0;
       list-style: none;
       margin-left: 1.5em;
       margin-bottom: 0;
       position: relative;
-      .nav-item {
-        color: $color-text-navbar;
-        text-decoration: none;
+      color: $color-text-navbar;
+      text-decoration: none;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-top: 4px solid $color-text-navbar-hover;
+        transform: scale(0, 0);
+        transition: all ease-in-out 250ms;
+      }
+      &:hover {
+        color: $color-text-navbar-hover;
         &::before {
-          content: "";
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          border-top: 4px solid $color-text-navbar-hover;
-          transform: scale(0, 0);
-          transition: all ease-in-out 250ms;
+          transform: scale(1, 1);
         }
-        &:hover {
-          color: $color-text-navbar-hover;
-          &::before {
-            transform: scale(1, 1);
-          }
-          .dropdown-content {
-          }
+        .dropdown-content {
         }
       }
       .dropdown {
