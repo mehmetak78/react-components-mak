@@ -42,7 +42,7 @@ const Navbar = () => {
       const nav_links = document.querySelector(".navbar .nav-items");
       nav_links.classList.remove("nav-items-active");
       const toggle_btn = document.querySelector(".toggle-btn");
-      toggle_btn.classList.remove("toggle-btn-open");
+      toggle_btn.classList.remove("toggle-btn-open-left");
       const mainPage = document.querySelector(".mainPage");
       mainPage.style.transform = "translateY(0)";
       nav_links.style.transition = "none";
