@@ -27,6 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 400ms ease-in-out;
 }
 .navbar .nav-items .nav-item {
   padding: 0;

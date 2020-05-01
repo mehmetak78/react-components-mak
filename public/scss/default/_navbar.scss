@@ -38,6 +38,7 @@ $z-index-navbar-dropdown-content: 100;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition : transform 400ms ease-in-out;
     .nav-item {
       padding: 0;
       margin-left: 1.5em;
