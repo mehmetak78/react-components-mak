@@ -4,7 +4,7 @@ $color-text-navbar:  #ffffff;
 $color-text-navbar-hover: #bbffff;
 $color-text-navbar-dropdown-hover: #3366ff;
 $color-bg-navbar1:#2222dd;
-$color-bg-navbar2:#4444ff;
+$color-bg-navbar2:#4488ff;
 $font-navbar: 'Acme', sans-serif;
 $font-size-navbar: 1.2rem;
 
@@ -69,7 +69,7 @@ $z-index-navbar-dropdown-content: 100;
         top: calc(100% + 3px);
         left: 0;
         text-align: left;
-        background-color: $color-bg-navbar2;
+        background-color: $color-bg-navbar1;
         white-space: nowrap;
         box-shadow: 0px 0px 20px 5px rgba($color-bg-navbar1, 0.6);
         z-index: $z-index-navbar-dropdown-content;
@@ -80,7 +80,7 @@ $z-index-navbar-dropdown-content: 100;
           text-decoration: none;
           &:hover{
             color: $color-text-navbar-hover;
-            background: rgba($color-bg-navbar1,1);
+            background: $color-text-navbar-dropdown-hover;
           }
         }
       }

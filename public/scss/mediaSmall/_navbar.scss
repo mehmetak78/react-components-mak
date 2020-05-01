@@ -16,7 +16,7 @@
       left: 0;
       margin: 0;
       display: block;
-      background: $color-bg-navbar2 ;
+      background: linear-gradient(180deg, $color-bg-navbar2 0%, $color-bg-navbar1 150%);
       width: 100%;
       transform-origin: top;
       padding: 0;
@@ -43,23 +43,18 @@
           a {
             margin:0  -1rem;
             padding: 0.6rem 2.2rem;
-            &:hover{
-              background: rgba($color-text-navbar-dropdown-hover,1);
-            }
           }
         }
       }
-
-
     }
     .nav-items-active  {
       transform: scale(1, 1);
-      li {
-        a {
-          opacity: 1;
-          transition: opacity 150ms ease-in-out 250ms;
-        }
-      }
+      //li {
+      //  a {
+      //    opacity: 1;
+      //    transition: opacity 150ms ease-in-out 250ms;
+      //  }
+      //}
     }
   }
 }
