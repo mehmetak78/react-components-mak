@@ -97,9 +97,9 @@ const Navbar = () => {
         <a className="nav-item" onClick={menuClicked} href="#">About</a>
         <div onClick={dropDownClicked} className="nav-item "  >Menu 1 &#9662;
           <div className="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a href="#">Link   1</a>
+            <a href="#">Link2</a>
+            <a href="#">Link To a Place</a>
           </div>
         </div>
           <div onClick={dropDownClicked} className="nav-item "  >Menu 2 &#9662;

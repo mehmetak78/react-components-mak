@@ -1,6 +1,5 @@
 @media screen and (max-width: 720px) {
   .navbar {
-    position: relative;
     .nav-avatar {
       display: none;
     }
@@ -21,18 +20,13 @@
       width: 100%;
       transform-origin: top;
       padding: 0;
-      list-style: none;
-      z-index: 999;
 
       .nav-item {
         margin: 0;
-        padding: 0.8rem;
+        padding: 1rem;
         display: block;
         opacity: 1;
         transition: opacity 400ms ease-in-out;
-        &::before {
-         //border: none;
-        }
         &:hover{
           background: $color-bg-navbar1;
         }
@@ -47,9 +41,10 @@
 
           }
           a {
-            margin:0  -0.8rem;
+            margin:0  -1rem;
+            padding: 0.6rem 2.2rem;
             &:hover{
-              background: rgba($color-bg-navbar2,0.4);
+              background: rgba($color-text-navbar-dropdown-hover,1);
             }
           }
         }

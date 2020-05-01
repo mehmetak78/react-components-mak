@@ -2,12 +2,18 @@
 
 $color-text-navbar:  #ffffff;
 $color-text-navbar-hover: #bbffff;
+$color-text-navbar-dropdown-hover: #3366ff;
 $color-bg-navbar1:#2222dd;
-$color-bg-navbar2:#333377;
+$color-bg-navbar2:#4444ff;
 $font-navbar: 'Acme', sans-serif;
 $font-size-navbar: 1.2rem;
 
+$transition-nav-item: transform ease-out 300ms;
+
+$z-index-navbar-dropdown-content: 100;
+
 .navbar {
+  position: relative;
   background: linear-gradient(180deg, $color-bg-navbar1 0%, $color-bg-navbar2 100%);
   height: 3.6rem;
   display: grid;
@@ -44,40 +50,34 @@ $font-size-navbar: 1.2rem;
         content: "";
         position: absolute;
         top: 100%;
-        left: 0;
-        width: 100%;
-        border-top: 4px solid $color-text-navbar-hover;
+        left: -10%;
+        width: 120%;
+        border-top: 3px solid $color-text-navbar-hover;
         transform: scale(0, 0);
-        transition: all ease-in-out 250ms;
+        transition: $transition-nav-item
       }
       &:hover {
         color: $color-text-navbar-hover;
         &::before {
           transform: scale(1, 1);
         }
-        .dropdown-content {
-        }
-      }
-      .dropdown {
-//        display: inline-block;
       }
       .dropdown-content {
         display: none;
         position: absolute;
         font-size: 0.9rem;
-        top: calc(100% + 4px);
+        top: calc(100% + 3px);
         left: 0;
         text-align: left;
         background-color: $color-bg-navbar2;
-        min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba($color-bg-navbar1, 0.8);
-        z-index: 100;
+        white-space: nowrap;
+        box-shadow: 0px 0px 20px 5px rgba($color-bg-navbar1, 0.6);
+        z-index: $z-index-navbar-dropdown-content;
+        flex-direction: column;
         a {
           color: $color-text-navbar;
           padding: 0.6rem 1.8rem;
           text-decoration: none;
-          display: flex;
-          flex-direction: column;
           &:hover{
             color: $color-text-navbar-hover;
             background: rgba($color-bg-navbar1,1);
@@ -85,7 +85,7 @@ $font-size-navbar: 1.2rem;
         }
       }
       .dropdown-content-active {
-        display: block;
+        display: flex;
       }
     }
   }
@@ -99,8 +99,9 @@ $font-size-navbar: 1.2rem;
       font-size: 1.4rem;
       width: 2rem;
       height: 2rem;
-      border: 1px solid;
+      //border: 1px solid;
       border-radius: 2em;
+      box-shadow: 0 0 10px 3px white;
     }
   }
 
