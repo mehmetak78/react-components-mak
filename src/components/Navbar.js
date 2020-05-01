@@ -78,7 +78,15 @@ const Navbar = () => {
 
   const menuClicked = () => {
     console.log("Menu Clicked");
+
     closeAllDropDown();
+    const nav_links = document.querySelector(".navbar .nav-items");
+    const styles = window.getComputedStyle(nav_links);
+    const height = parseFloat(styles['height']) ;
+    const mainPage = document.querySelector(".mainPage");
+    if (toggleButtonOpened) {
+      mainPage.style.transform = "translateY(" + height + "px)";
+    }
   }
 
   return (
