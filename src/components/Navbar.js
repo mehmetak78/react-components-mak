@@ -6,7 +6,6 @@ import ToggleButton from "./ToggleButton";
 let toggleButtonOpened = false;
 
 const Navbar = () => {
-
   const closeAllDropDown = () => {
     const dropdown = document.querySelectorAll(".dropdown");
     dropdown.forEach((dd) => {
@@ -16,16 +15,14 @@ const Navbar = () => {
       });
     })
   }
-
   const toggleClicked = () => {
     const nav_links = document.querySelector(".navbar .nav-items");
     nav_links.style.transition = "transform 400ms ease-in-out";
-    nav_links.classList.toggle("nav-active");
+    nav_links.classList.toggle("nav-items-active");
     const styles = window.getComputedStyle(nav_links);
     const height = parseFloat(styles['height']) ;
     const mainPage = document.querySelector(".mainPage");
-    const toggle_btn = document.querySelector(".toggle-btn");
-    toggle_btn.classList.toggle("toggle-btn-open");
+
 
     if (!toggleButtonOpened) {
       mainPage.style.transform = "translateY(" + height + "px)";
@@ -36,14 +33,14 @@ const Navbar = () => {
     toggleButtonOpened = !toggleButtonOpened;
 
   }
-
   const mql = window.matchMedia('(max-width: 720px)');
   function mediaChanged(e) {
+    console.log(mql.matches);
     if (!mql.matches && toggleButtonOpened) {
       console.log("Matched");
       toggleButtonOpened = false;
       const nav_links = document.querySelector(".navbar .nav-items");
-      nav_links.classList.remove("nav-active");
+      nav_links.classList.remove("nav-items-active");
       const toggle_btn = document.querySelector(".toggle-btn");
       toggle_btn.classList.remove("toggle-btn-open");
       const mainPage = document.querySelector(".mainPage");
@@ -52,10 +49,10 @@ const Navbar = () => {
     }
     closeAllDropDown();
   }
+  //mql.addEventListener("change",mediaChanged);    // not supported in Safari
   mql.addListener(mediaChanged);
 
   const dropDownClicked = (e) => {
-    console.log(e.target.tagName);
     if (e.target.tagName === "DIV") {
       const dropdownContents = document.querySelectorAll(".dropdown-content");
       dropdownContents.forEach((elem) => {
@@ -87,8 +84,12 @@ const Navbar = () => {
     <div className="navbar">
       <a className="nav-brand" href="#"><img src={logo} alt="" /><span></span></a>
       <ul className="nav-items">
-        <li><a className="nav-item" onClick={menuClicked} href="#">Ana Sayfa</a></li>
-        <li><a className="nav-item" onClick={menuClicked} href="#">About</a></li>
+        <li>
+          <a className="nav-item" onClick={menuClicked} href="#">Ana Sayfa</a>
+        </li>
+        <li>
+          <a className="nav-item" onClick={menuClicked} href="#">About</a>
+        </li>
         <li onClick={dropDownClicked}>
           <div className="nav-item dropdown"  >Menu 1 &#9662;
             <div className="dropdown-content ">
@@ -112,7 +113,7 @@ const Navbar = () => {
         <div className="nav-avatar-text">M</div>
       </div>
       <div className="nav-btn">
-        <ToggleButton toggleClicked={toggleClicked}/>
+        <ToggleButton id={"toggleButton2"} toggleClicked={toggleClicked}/>
       </div>
     </div>
   );

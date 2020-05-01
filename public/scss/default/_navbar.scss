@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
 $color-text-navbar:  #ffffff;
-$color-text-navbar-hover: #bbffbb;
+$color-text-navbar-hover: #bbffff;
 
 $color-bg-navbar1:#2222dd;
 $color-bg-navbar2:#333377;
@@ -58,7 +58,6 @@ $font-navbar: 'Acme', sans-serif;
             transform: scale(1, 1);
           }
           .dropdown-content {
-            //display: block;
           }
         }
       }
@@ -96,9 +95,7 @@ $font-navbar: 'Acme', sans-serif;
         display: block;
       }
     }
-
   }
-
   .nav-avatar {
     margin: 0 auto;
     grid-column: 3 / 4 ;

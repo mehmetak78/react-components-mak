@@ -12,11 +12,14 @@
 }
 
 .mainPage {
+  background: linear-gradient(180deg, $color-bg1 0%, $color-bg2 100%);
   transition: transform ease-in-out 400ms;
+  height: calc(100vh - 3.6rem);
+  color: white;
+  padding: 1rem;
 }
 
 
 //@import "mediaSmall/config";
-@import "mediaSmall/utilities";
 @import "mediaSmall/components";
 @import "mediaSmall/navbar";

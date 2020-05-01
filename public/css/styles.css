@@ -44,12 +44,12 @@
   top: 100%;
   left: 0;
   width: 100%;
-  border-top: 4px solid #bbffbb;
+  border-top: 4px solid #bbffff;
   transform: scale(0, 0);
   transition: all ease-in-out 250ms;
 }
 .navbar .nav-items li .nav-item:hover {
-  color: #bbffbb;
+  color: #bbffff;
 }
 .navbar .nav-items li .nav-item:hover::before {
   transform: scale(1, 1);
@@ -78,7 +78,7 @@
   flex-direction: column;
 }
 .navbar .nav-items li .dropdown-content a:hover {
-  color: #bbffbb;
+  color: #bbffff;
   background: #2222dd;
 }
 .navbar .nav-items li .dropdown-content_active {
@@ -132,9 +132,14 @@
   cursor: pointer;
 }
 
-.toggle-btn-open .toggle-btn-line::after {
+.toggle-btn-open-left .toggle-btn-line::after {
   top: 7px;
   transform: rotate(-10deg);
+}
+
+.toggle-btn-open-right .toggle-btn-line::after {
+  top: 7px;
+  transform: rotate(10deg);
 }
 
 * {
@@ -144,7 +149,11 @@
 }
 
 .mainPage {
+  background: linear-gradient(180deg, #2288DD 0%, #9ED1FF 100%);
   transition: transform ease-in-out 400ms;
+  height: calc(100vh - 3.6rem);
+  color: white;
+  padding: 1rem;
 }
 
 @media screen and (max-width: 720px) {
@@ -167,7 +176,7 @@
     left: 0;
     margin: 0;
     display: block;
-    background: rgba(51, 51, 119, 0.8);
+    background: #333377;
     width: 100%;
     transform-origin: top;
     padding: 0;
@@ -178,13 +187,13 @@
     margin: 0;
   }
   .navbar .nav-items li .nav-item {
-    padding: 0.8em;
+    padding: 0.8rem;
     display: block;
     opacity: 1;
     transition: opacity 400ms ease-in-out;
   }
   .navbar .nav-items li:hover {
-    background: rgba(51, 51, 119, 0.9);
+    background: #2222dd;
   }
   .navbar .nav-items li .dropdown-content {
     position: relative;
@@ -195,13 +204,16 @@
   .navbar .nav-items li .dropdown-content:first-child {
     margin-top: 0.8em;
   }
-  .navbar .nav-items li .dropdown-content a:hover {
-    background: rgba(34, 34, 221, 0.5);
+  .navbar .nav-items li .dropdown-content a {
+    margin: 0 -0.8rem;
   }
-  .navbar .nav-active {
+  .navbar .nav-items li .dropdown-content a:hover {
+    background: rgba(51, 51, 119, 0.4);
+  }
+  .navbar .nav-items-active {
     transform: scale(1, 1);
   }
-  .navbar .nav-active li a {
+  .navbar .nav-items-active li a {
     opacity: 1;
     transition: opacity 150ms ease-in-out 250ms;
   }

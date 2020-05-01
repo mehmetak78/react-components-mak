@@ -1,3 +1,6 @@
+
+// TOGGLE BUTTON
+
 .toggle-btn {
   height: 2rem;
   width:2rem;
@@ -28,11 +31,18 @@
   }
 }
 
-.toggle-btn-open {
+.toggle-btn-open-left {
   .toggle-btn-line::after {
     top: 7px;
-
     transform: rotate(-10deg);
-
   }
 }
+
+.toggle-btn-open-right {
+  .toggle-btn-line::after {
+    top: 7px;
+    transform: rotate(10deg);
+  }
+}
+
+
