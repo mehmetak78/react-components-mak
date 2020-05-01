@@ -11,6 +11,10 @@
   padding: 0;
 }
 
+body {
+  background: $color-bg1;
+}
+
 .mainPage {
   background: linear-gradient(180deg, $color-bg1 0%, $color-bg2 100%);
 
