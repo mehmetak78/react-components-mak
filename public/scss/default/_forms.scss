@@ -99,6 +99,7 @@ textarea {
   }
   textarea {
     height: calc(100% - 1rem);
+    resize: none;
   }
 
 }

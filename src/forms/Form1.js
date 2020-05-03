@@ -18,7 +18,7 @@ const Form1 = () => {
           required
         />
         <TextArea
-          className="col1 row2"
+          className="col1 row3"
           label="Surname:"
           name="surname"
           type="text"
