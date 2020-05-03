@@ -2,36 +2,39 @@ import React from 'react';
 import TextBox from "../components/formComponents/TextBox";
 import FormButtons from "../components/formComponents/FormButtons";
 import Form from "../components/formComponents/Form";
+import TextArea from "../components/formComponents/TextArea";
 
 const Form1 = () => {
   return (
     <div className="form-container px-2 py-1">
       <h1 className="form-title text-primary ">Account Login </h1>
-      <Form className={"grid"}>
+      <Form id="form1" className={"grid"}>
         <TextBox
-          label="Name"
+          // className="row3"
+          label="Name:"
           name="name"
           type="text"
           autoComplete="name"
           required
         />
-        <TextBox
-          className="col1"
-          label="Surname"
+        <TextArea
+          className="col1 row2"
+          label="Surname:"
           name="surname"
           type="text"
           autoComplete="surname"
+          form="form1"
           required
         />
         <TextBox
-          label="Email"
+          label="Email:"
           name="email"
           type="text"
           autoComplete="email"
           required
         />
         <TextBox
-          label="Surname"
+          label="Surname:"
           name="surname"
           type="text"
           autoComplete="surname"

@@ -6,7 +6,7 @@ const FormButtons = (props) => {
   return (
     <div className={className}>
       {buttons.map(button => (
-        <input type={button.type} value={button.value} className="btn btn-primary "/>
+        <input id= {button.id} type={button.type} value={button.value} className="btn btn-primary "/>
       ))}
     </div>
   );
@@ -14,7 +14,7 @@ const FormButtons = (props) => {
 
 FormButtons.defaultProps = {
   buttons: [
-    {label:"Ok", value:"Ok", type:"submit"}
+    {id:"", label:"Ok", value:"Ok", type:"submit"}
   ]
 }
 

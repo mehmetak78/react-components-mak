@@ -173,54 +173,6 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-.grid1 {
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.grid2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.grid5 {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.grid6 {
-  grid-template-columns: repeat(6, 1fr);
-}
-
-.grid7 {
-  grid-template-columns: repeat(7, 1fr);
-}
-
-.grid8 {
-  grid-template-columns: repeat(8, 1fr);
-}
-
-.grid9 {
-  grid-template-columns: repeat(9, 1fr);
-}
-
-.grid10 {
-  grid-template-columns: repeat(10, 1fr);
-}
-
-.grid11 {
-  grid-template-columns: repeat(11, 1fr);
-}
-
-.grid12 {
-  grid-template-columns: repeat(12, 1fr);
-}
-
 .col1 {
   grid-column-start: span 1;
 }
@@ -516,6 +468,33 @@
   border-radius: 50%;
 }
 
+/*
+https://www.w3schools.com/html/html_form_input_types.asp
+Here are the different input types you can use in HTML:
+
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">
+*/
 input[type=text],
 input[type=email],
 input[type=password],
@@ -567,7 +546,7 @@ textarea:focus {
 }
 
 .form-btn-group {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   grid-column: 1/-1;
 }
 .form-btn-group input[type=submit],
@@ -575,18 +554,22 @@ textarea:focus {
   font-family: inherit;
 }
 
-.textbox {
+.textbox, .textarea {
   display: flex;
   align-items: center;
   margin: 0.5rem 0;
+  height: 100%;
 }
-.textbox label {
+.textbox label, .textarea label {
   text-align: right;
-  padding-right: 0.5rem;
+  padding-right: 0.1rem;
 }
-.textbox input {
+.textbox input, .textbox textarea, .textarea input, .textarea textarea {
   flex-shrink: 2;
   width: 100%;
+}
+.textbox textarea, .textarea textarea {
+  height: calc(100% - 1rem);
 }
 
 .card-group {
@@ -717,14 +700,14 @@ body {
   Extra Large : >= 1200px
 */
 @media screen and (max-width: 768px) {
-  .textbox {
+  .textbox, .textarea {
     flex-direction: column;
   }
-  .textbox label {
+  .textbox label, .textarea label {
     align-self: start;
     padding-bottom: 0.2rem;
   }
-  .textbox input {
+  .textbox input, .textarea input {
     margin: 0;
   }
 

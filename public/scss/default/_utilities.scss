@@ -67,11 +67,11 @@ $colamounts: (1,2,3,4,5,6,7,8,9,10,11,12);
 $rowamounts: (1,2,3,4,5,6,7,8,9,10,11,12);
 
 
-@each $col in $colamounts {
-  .grid#{$col} {
-    grid-template-columns: repeat($col,1fr);
-  }
-}
+//@each $col in $colamounts {
+//  .grid#{$col} {
+//    grid-template-columns: repeat($col,1fr);
+//  }
+//}
 
 @each $col in $colamounts {
   .col#{$col} {
@@ -82,6 +82,6 @@ $rowamounts: (1,2,3,4,5,6,7,8,9,10,11,12);
 @each $row in $rowamounts {
   .row#{$row} {
     grid-row-start: span $row;
-  }
+    }
 }
 

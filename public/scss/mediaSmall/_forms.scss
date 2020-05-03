@@ -6,7 +6,7 @@
   Extra Large : >= 1200px
 */
 @media screen and (max-width: 768px) {
-  .textbox {
+  .textbox, .textarea {
     flex-direction: column;
     label {
       align-self: start;

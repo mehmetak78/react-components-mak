@@ -1,3 +1,32 @@
+/*
+https://www.w3schools.com/html/html_form_input_types.asp
+Here are the different input types you can use in HTML:
+
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">
+*/
+
+
 
 input[type=text],
 input[type=email],
@@ -40,8 +69,6 @@ textarea {
   }
 }
 
-
-
 .form {
   label {
     color: $color-text-primary;
@@ -49,7 +76,7 @@ textarea {
 }
 
 .form-btn-group {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   grid-column: 1 / -1;
   input[type='submit'],
   button {
@@ -57,17 +84,21 @@ textarea {
   }
 }
 
-.textbox {
+.textbox, .textarea {
   display: flex;
   align-items: center;
   margin: 0.5rem 0;
+  height: 100%;
   label {
     text-align: right;
-    padding-right: 0.5rem;
+    padding-right: 0.1rem;
   }
-  input {
+  input, textarea {
     flex-shrink: 2;
-    width: 100%
+    width: 100%;
+  }
+  textarea {
+    height: calc(100% - 1rem);
   }
 
 }
