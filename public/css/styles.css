@@ -546,12 +546,15 @@ textarea:focus {
 }
 
 .form-btn-group {
-  margin-top: 1rem;
   grid-column: 1/-1;
+  display: flex;
+  width: 100%;
 }
-.form-btn-group input[type=submit],
-.form-btn-group button {
+.form-btn-group input, .form-btn-group button {
+  margin: 0.5rem;
+  flex-grow: 1;
   font-family: inherit;
+  text-align: center;
 }
 
 .textbox, .textarea {
@@ -719,12 +722,15 @@ body {
     align-self: start;
     padding-bottom: 0.2rem;
   }
-  .textbox input, .textarea input {
+  .textbox input, .textbox button, .textarea input, .textarea button {
     margin: 0;
   }
 
-  .btn-group {
-    grid-template-columns: 1fr;
+  .form-btn-group {
+    flex-direction: column;
+  }
+  .form-btn-group input, .form-btn-group button {
+    margin: 0.5rem 0;
   }
 }
 @media screen and (max-width: 1200px) {

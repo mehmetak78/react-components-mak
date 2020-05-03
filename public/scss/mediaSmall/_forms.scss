@@ -12,12 +12,15 @@
       align-self: start;
       padding-bottom: 0.2rem;
     }
-    input {
+    input, button {
       margin:0;
     }
   }
-  .btn-group {
-    grid-template-columns: 1fr;
+  .form-btn-group {
+    flex-direction: column;
+    input, button {
+      margin:0.5rem 0;
+    }
   }
 }
 

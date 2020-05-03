@@ -2,9 +2,8 @@ import React from 'react';
 
 const FormButtons = (props) => {
   const {buttons} = props;
-  const className = "form-btn-group grid grid" + buttons.length;
   return (
-    <div className={className}>
+    <div className={"form-btn-group"}>
       {buttons.map(button => (
         <input id= {button.id} type={button.type} value={button.value} className="btn btn-primary "/>
       ))}

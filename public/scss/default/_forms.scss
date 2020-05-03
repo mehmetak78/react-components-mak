@@ -76,12 +76,16 @@ textarea {
 }
 
 .form-btn-group {
-  margin-top: 1rem;
   grid-column: 1 / -1;
-  input[type='submit'],
-  button {
+  display: flex;
+  width:100%;
+  input, button {
+    margin: 0.5rem;
+    flex-grow: 1;
     font-family: inherit;
+    text-align: center;
   }
+
 }
 
 .textbox, .textarea {
