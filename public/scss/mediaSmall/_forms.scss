@@ -7,7 +7,7 @@
 */
 @media screen and (max-width: 768px) {
   .textbox, .textarea {
-    flex-direction: column;
+    flex-direction: column-reverse;
     label {
       align-self: start;
       padding-bottom: 0.2rem;
