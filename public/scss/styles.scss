@@ -1,9 +1,13 @@
-
 @import "default/config";
 @import "default/utilities";
+
+
 @import "default/components";
 @import "default/navbar";
 @import "default/buttons";
+@import "default/forms";
+@import "default/cards";
+
 
 * {
   box-sizing: border-box;
@@ -16,7 +20,13 @@ body {
 }
 
 .mainPage {
-  background: linear-gradient(180deg, $color-bg1 0%, $color-bg2 100%);
+  //background: linear-gradient(180deg, $color-bg1 0%, $color-bg2 100%);
+  //background-color: #0093E9;
+  //background-color: #1066eb;
+  //background-image: linear-gradient(180deg, #1066eb 0%, #41cfff 100%);
+
+  background: linear-gradient(180deg, #1066eb 0%, #41cfff 100%);
+
   transition: transform ease-in-out 400ms;
   height: calc(100vh - 3.6rem);
   color: white;
@@ -25,4 +35,5 @@ body {
 
 
 @import "mediaSmall/components";
+@import "mediaSmall/forms";
 @import "mediaSmall/navbar";

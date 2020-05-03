@@ -60,7 +60,7 @@ const Navbar = () => {
   }
 
   const listenMediaChanges = () => {
-    const mql = window.matchMedia('(max-width: 720px)');
+    const mql = window.matchMedia('(max-width: 768px)');
     function mediaChanged(e) {
       if (!mql.matches && toggleButtonOpened) {
         toggleButtonOpened = false;

@@ -1,0 +1,34 @@
+/*
+  Extra Small : < 576px
+  Small       : >= 576px
+  Medium      : >= 768px
+  Large       : >= 992px
+  Extra Large : >= 1200px
+*/
+@media screen and (max-width: 768px) {
+  .textbox {
+    flex-direction: column;
+    label {
+      align-self: start;
+      padding-bottom: 0.2rem;
+    }
+    input {
+      margin:0;
+    }
+  }
+  .btn-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

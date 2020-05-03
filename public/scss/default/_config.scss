@@ -3,19 +3,30 @@
 $color-white: #ffffff;
 $color-black: #000000;
 
-$color-bg1:#8888DD;
+$color-bg1:#1066eb;
 $color-bg2:#9ED1FF;
 
-$color-button1: #598236;
-$color-button2: #829D5F;
+
 $color-alert: #396206;
 
 $color-bg-alert-bg: #929D5F;
 
+$color-text-primary: #2222dd;
+$color-text-secondary: #4488ff;
+
+$color-btn-primary: #ffffff;
+$color-btn-secondary: #2222dd;
+
+$color-btn-bg-primary: #2222dd;
+$color-btn-bg-secondary: #4488ff;
+
+$color-form-bg-primary: #f2f2f2;
+$color-form-bg-secondary: #f4f4f4;
+$color-input-border: #BEBEBE;
+$color-input-hover: #88D5E9;
 
 
-
-
+$color-badge-bg-primary:  #4488ff;
 
 // Set text color based on bg
 @function set-text-color($color) {

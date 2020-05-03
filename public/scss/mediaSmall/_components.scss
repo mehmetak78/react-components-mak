@@ -22,3 +22,20 @@
 //a {
 //  color: set-text-color($primary-color);
 //}
+
+.container {
+  width: 90vw;
+  margin: 1rem auto;
+  padding: 1rem;
+ // box-shadow: 0 0 1em 1px rgba(0, 0, 0, 0.5);
+  box-shadow:
+          0 5px 5.3px -34px rgba(0, 0, 0, 0.13),
+          0 11.6px 12.8px -34px rgba(0, 0, 0, 0.158),
+          0 21.2px 24px -34px rgba(0, 0, 0, 0.171),
+          0 37.4px 42.9px -34px rgba(0, 0, 0, 0.189),
+          0 70.7px 80.2px -34px rgba(0, 0, 0, 0.233),
+          0 169px 192px -34px rgba(0, 0, 0, 0.41)
+;
+
+}
+

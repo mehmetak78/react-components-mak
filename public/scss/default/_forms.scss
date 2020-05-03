@@ -1,0 +1,80 @@
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=datetime],
+input[type=number],
+input[type=search],
+input[type=time],
+input[type=url],
+select,
+textarea {
+  padding: 0.4rem;
+  font-size: 1rem;
+  border:1px solid $color-input-border;
+  transition: all 0.30s ease-in-out;
+  outline: none;
+  &:focus {
+    box-shadow: 0 0 12px $color-input-hover;
+    border: 1px solid $color-input-hover;
+  }
+}
+
+.form-container {
+  width: 90vw;
+  margin: 2rem auto;
+  overflow: hidden;
+  box-shadow:
+          0 0 1em 1px rgba(0, 0, 0, 0.1),
+          0 6.5px 10.2px -51px rgba(0, 0, 0, 0.409),
+          0 17.1px 28.3px -51px rgba(0, 0, 0, 0.443),
+          0 40.8px 68.1px -51px rgba(0, 0, 0, 0.491),
+          0 136px 226px -51px rgba(0, 0, 0, 0.58);
+  border-radius: 0.5rem;
+  background: $color-form-bg-primary;
+  font-family: "Work Sans", sans-serif;
+  .form-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+.form {
+  label {
+    color: $color-text-primary;
+  }
+}
+
+.form-btn-group {
+  margin-top: 0.5rem;
+  grid-column: 1 / -1;
+  input[type='submit'],
+  button {
+    font-family: inherit;
+  }
+}
+
+.textbox {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  label {
+    text-align: right;
+    padding-right: 0.5rem;
+  }
+  input {
+    flex-shrink: 2;
+    width: 100%
+  }
+
+}
+
+
+
+
+
+
+

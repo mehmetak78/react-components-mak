@@ -46,3 +46,65 @@
 }
 
 
+.btn {
+  border: none;
+  padding: 0.5rem 1.3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 3px -2px rgba(0,0,0,.75);
+  transition: all ease-in-out 200ms;
+  cursor: pointer;
+  font-size: 1rem;
+  &:hover {
+    transform: translatey(-1px);
+    box-shadow: 0px 18px 8px -10px rgba(0,0,0,.6);
+  }
+}
+
+.btn-link {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-sm {
+  font-size: 0.8rem;
+  padding: 0.3rem 1rem;
+  margin-right: 0.2rem;
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.7rem;
+  text-align: center;
+  margin: 0.3rem;
+  background: $color-badge-bg-primary;
+  color: #333;
+  border-radius: 5px;
+}
+
+.btn-primary,
+.bg-primary,
+.badge-primary,
+.alert-primary {
+  background: $color-btn-bg-primary;
+  color: $color-btn-primary;
+}
+
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.bg-light,
+.badge-light {
+  border: #ccc solid 1px;
+}
+
+.round-img {
+  border-radius: 50%;
+}

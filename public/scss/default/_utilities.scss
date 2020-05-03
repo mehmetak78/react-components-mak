@@ -1,20 +1,87 @@
 
-//// Margin & padding classes
-//$spaceamounts: (1,2,3,4,5);
-//
-//@each $space in $spaceamounts {
-//  .m-#{$space} {
-//    margin: #{$space}rem;
-//  }
-//  .my-#{$space} {
-//    margin: #{$space}rem 0;
-//  }
-//
-//  .p-#{$space} {
-//    padding: #{$space}rem;
-//  }
-//  .py-#{$space} {
-//    padding: #{$space}rem 0;
-//  }
-//}
-//
+// Margin & padding classes
+$spaceamounts: (1,2,3,4,5);
+
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .mx-#{$space} {
+    margin-left: #{$space}rem;
+    margin-right: #{$space}rem;
+  }
+
+  .my-#{$space} {
+    margin-top: #{$space}rem;
+    margin-bottom: #{$space}rem;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .px-#{$space} {
+    padding-left: #{$space}rem;
+    padding-right: #{$space}rem;
+  }
+
+  .py-#{$space} {
+    padding-top: #{$space}rem;
+    padding-bottom: #{$space}rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: $color-text-primary;
+}
+
+.text-secondary {
+  color: $color-text-secondary;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 0.3rem;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3,1fr);
+}
+
+$colamounts: (1,2,3,4,5,6,7,8,9,10,11,12);
+$rowamounts: (1,2,3,4,5,6,7,8,9,10,11,12);
+
+
+@each $col in $colamounts {
+  .grid#{$col} {
+    grid-template-columns: repeat($col,1fr);
+  }
+}
+
+@each $col in $colamounts {
+  .col#{$col} {
+    grid-column-start: span $col;
+  }
+}
+
+@each $row in $rowamounts {
+  .row#{$row} {
+    grid-row-start: span $row;
+  }
+}
+

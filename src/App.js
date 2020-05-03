@@ -1,6 +1,9 @@
 import React from 'react';
 import Navbar from "./components/Navbar";
-import ToggleButton from "./components/ToggleButton";
+
+import CardWithImg from "./components/CardWithImg";
+import Page1 from "./pages/Page1";
+import FormPage1 from "./pages/FormPage1";
 
 function App() {
   return (
@@ -8,9 +11,8 @@ function App() {
       <Navbar/>
       <div className="mainPage">
         <h1>Main Page Goes Here</h1>
-        <ToggleButton id={"toggleButton1"} direction={"DIRECTION_RIGHT"}/>
+        <FormPage1/>
       </div>
-
     </div>
   );
 }

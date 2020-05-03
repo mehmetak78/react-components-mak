@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700;900&display=swap');
+
+$color-card-text-header: #3333ff;
+$color-card-text-content: #3333ff;
+$color-card-text-footer: #3333ff;
+
+$card-primary-font-family: 'Work Sans', sans-serif;
+
+.card-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card {
+  font-family: $card-primary-font-family;
+  min-width: 20em;
+  max-width: 40em;
+  box-shadow: 0 0 1em 1px rgba(0, 0, 0, 0.5);
+  padding: 2rem 1rem;
+  margin: 1rem;
+  display: grid;
+  grid-column-gap: 1em;
+  grid-template: "title" "content" "footer";
+  background: none;
+  border: none;
+
+  .card-title {
+    color: $color-card-text-header;
+    grid-area: title;
+    font-weight: 900;
+    margin: 0;
+    padding-bottom: 1rem;
+    justify-self: center;
+  }
+
+  .card-content {
+    color: $color-card-text-content;
+    grid-area: content;
+  }
+
+  .card-footer {
+    grid-area: footer;
+    padding-top: 1rem;
+    a {
+      cursor: pointer;
+      font-size: 0.8rem;
+      color: $color-card-text-footer;
+      text-decoration: none;
+      background: none;
+    }
+  }
+}
+
+.card-with-img {
+  font-family: $card-primary-font-family;
+  min-width: 20em;
+  max-width: 40em;
+  box-shadow: 0 0 1em 1px rgba(0, 0, 0, 0.5);
+  padding: 2rem 1rem;
+  margin: 1rem;
+  display: grid;
+  grid-column-gap: 1em;
+  grid-template: "img title" "img content"  "img footer" ;
+  background: none;
+  border: none;
+  .card-img {
+    grid-area: img;
+    max-width: 100%;
+    align-self: start;
+    justify-self: center;
+  }
+  & + .img-right {
+    grid-template: "title img" "content img" "footer img" ;
+    background: red;
+  }
+  .card-title {
+    color: $color-card-text-header;
+    grid-area: title;
+    font-weight: 900;
+    margin: 0;
+    padding-bottom: 1rem;
+    justify-self: center;
+  }
+  .card-content {
+    color: $color-card-text-content;
+    grid-area: content;
+  }
+  .card-footer {
+    grid-area: footer;
+    padding-top: 1rem;
+    a {
+      cursor: pointer;
+      color: $color-card-text-footer;
+      text-decoration: none;
+      font-size: 0.8rem;
+      background: none;
+    }
+  }
+}
+.card-with-img-right {
+  @extend .card-with-img;
+  grid-template: "title img" "content img" "footer img" ;
+}
