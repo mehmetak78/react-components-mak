@@ -572,7 +572,7 @@ textarea:focus {
 }
 .textbox input:required ~ label, .textbox textarea:required ~ label, .textarea input:required ~ label, .textarea textarea:required ~ label {
   padding-right: 1.2rem;
-  color: red;
+  color: #ff0000;
 }
 .textbox input:required ~ label::after, .textbox textarea:required ~ label::after, .textarea input:required ~ label::after, .textarea textarea:required ~ label::after {
   position: absolute;
