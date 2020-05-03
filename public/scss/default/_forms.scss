@@ -93,6 +93,7 @@ textarea {
   flex-direction:row-reverse;
   align-items: center;
   margin: 0.5rem 0;
+  padding:0;
   height: 100%;
   position: relative;
   label {
@@ -100,7 +101,7 @@ textarea {
     padding-right: 0.2rem;
   }
   input, textarea {
-    flex-shrink: 2;
+    flex-shrink: 1;
     width: 100%;
     &:required {
       ~ label{

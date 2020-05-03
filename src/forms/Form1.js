@@ -15,9 +15,10 @@ const Form1 = () => {
           name="name"
           type="text"
           autoComplete="name"
+          required
         />
         <TextArea
-          className="col1 row3"
+          className="row3"
           label="Surname:"
           name="surname"
           type="text"

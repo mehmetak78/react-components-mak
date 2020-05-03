@@ -562,6 +562,7 @@ textarea:focus {
   flex-direction: row-reverse;
   align-items: center;
   margin: 0.5rem 0;
+  padding: 0;
   height: 100%;
   position: relative;
 }
@@ -570,7 +571,7 @@ textarea:focus {
   padding-right: 0.2rem;
 }
 .textbox input, .textbox textarea, .textarea input, .textarea textarea {
-  flex-shrink: 2;
+  flex-shrink: 1;
   width: 100%;
 }
 .textbox input:required ~ label, .textbox textarea:required ~ label, .textarea input:required ~ label, .textarea textarea:required ~ label {
@@ -716,14 +717,16 @@ body {
 */
 @media screen and (max-width: 768px) {
   .textbox, .textarea {
+    margin: 0.5rem 0;
+    padding: 0;
     flex-direction: column-reverse;
   }
   .textbox label, .textarea label {
     align-self: start;
     padding-bottom: 0.2rem;
   }
-  .textbox input, .textbox button, .textarea input, .textarea button {
-    margin: 0;
+  .textbox textarea, .textarea textarea {
+    height: auto;
   }
 
   .form-btn-group {

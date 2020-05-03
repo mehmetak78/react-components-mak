@@ -7,13 +7,18 @@
 */
 @media screen and (max-width: 768px) {
   .textbox, .textarea {
+    margin: 0.5rem 0;
+    padding:0;
     flex-direction: column-reverse;
     label {
       align-self: start;
       padding-bottom: 0.2rem;
     }
     input, button {
-      margin:0;
+      //margin:0;
+    }
+    textarea {
+      height: auto;
     }
   }
   .form-btn-group {
