@@ -573,6 +573,10 @@ textarea:focus,
   text-align: center;
 }
 
+.form-btn-group-stop-hover {
+  pointer-events: none;
+}
+
 .textbox, .textarea, .combobox {
   display: flex;
   flex-direction: row-reverse;

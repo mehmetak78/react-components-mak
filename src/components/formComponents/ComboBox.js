@@ -12,12 +12,7 @@ const Combobox = (props) => {
 
   const [selectedItems] = useState(new Set());
 
-  const comboMainClicked = (e) => {
-    const comboItems = e.target.querySelector(".combo-items");
-    if (comboItems) {
-      comboItems.classList.toggle("combo-items-active");
-    }
-  }
+
 
   useEffect(() => {
     if (multi) {
@@ -36,12 +31,25 @@ const Combobox = (props) => {
         comboItems.classList.remove("combo-items-active");
       })
     }
+    const formButtons = document.querySelector(".form-btn-group");
+    formButtons.classList.remove("form-btn-group-stop-hover");
   }
   
   window.onclick = function(event) {
     if (!event.target.classList.contains("combo-main")) {
       closeComboItems();
     }
+  }
+
+  const comboMainClicked = (e) => {
+    const comboItems = e.target.querySelector(".combo-items");
+    if (comboItems) {
+      comboItems.classList.toggle("combo-items-active");
+      const formButtons = document.querySelector(".form-btn-group");
+      formButtons.classList.toggle("form-btn-group-stop-hover");
+    }
+
+
   }
 
   const comboItemClicked = (e) => {
