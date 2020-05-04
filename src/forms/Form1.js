@@ -3,6 +3,7 @@ import TextBox from "../components/formComponents/TextBox";
 import FormButtons from "../components/formComponents/FormButtons";
 import Form from "../components/formComponents/Form";
 import TextArea from "../components/formComponents/TextArea";
+import Combobox from "../components/formComponents/ComboBox";
 
 const Form1 = () => {
   return (
@@ -35,6 +36,13 @@ const Form1 = () => {
         />
         <TextBox
           label="Surname:"
+          name="surname"
+          type="text"
+          autoComplete="surname"
+          required
+        />
+        <Combobox
+          label="Combo:"
           name="surname"
           type="text"
           autoComplete="surname"

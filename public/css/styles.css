@@ -505,12 +505,29 @@ input[type=search],
 input[type=time],
 input[type=url],
 select,
-textarea {
+textarea,
+.combo-main {
+  color: #2222dd;
+  background: #fff;
   padding: 0.4rem;
   font-size: 1rem;
   border: 1px solid #BEBEBE;
   transition: all 0.3s ease-in-out;
   outline: none;
+}
+input[type=text]:hover,
+input[type=email]:hover,
+input[type=password]:hover,
+input[type=date]:hover,
+input[type=datetime]:hover,
+input[type=number]:hover,
+input[type=search]:hover,
+input[type=time]:hover,
+input[type=url]:hover,
+select:hover,
+textarea:hover,
+.combo-main:hover {
+  border: 1px solid #88D5E9;
 }
 input[type=text]:focus,
 input[type=email]:focus,
@@ -522,7 +539,8 @@ input[type=search]:focus,
 input[type=time]:focus,
 input[type=url]:focus,
 select:focus,
-textarea:focus {
+textarea:focus,
+.combo-main:focus {
   box-shadow: 0 0 12px #88D5E9;
   border: 1px solid #88D5E9;
 }
@@ -530,7 +548,6 @@ textarea:focus {
 .form-container {
   width: 90vw;
   margin: 2rem auto;
-  overflow: hidden;
   box-shadow: 0 0 1em 1px rgba(0, 0, 0, 0.1), 0 6.5px 10.2px -51px rgba(0, 0, 0, 0.409), 0 17.1px 28.3px -51px rgba(0, 0, 0, 0.443), 0 40.8px 68.1px -51px rgba(0, 0, 0, 0.491), 0 136px 226px -51px rgba(0, 0, 0, 0.58);
   border-radius: 0.5rem;
   background: #f2f2f2;
@@ -557,7 +574,7 @@ textarea:focus {
   text-align: center;
 }
 
-.textbox, .textarea {
+.textbox, .textarea, .combobox {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -566,26 +583,61 @@ textarea:focus {
   height: 100%;
   position: relative;
 }
-.textbox label, .textarea label {
+.textbox label, .textarea label, .combobox label {
   text-align: right;
   padding-right: 0.2rem;
 }
-.textbox input, .textbox textarea, .textarea input, .textarea textarea {
+.textbox input, .textbox textarea, .textarea input, .textarea textarea, .combobox input, .combobox textarea {
   flex-shrink: 1;
   width: 100%;
 }
-.textbox input:required ~ label, .textbox textarea:required ~ label, .textarea input:required ~ label, .textarea textarea:required ~ label {
+.textbox input:required ~ label, .textbox textarea:required ~ label, .textarea input:required ~ label, .textarea textarea:required ~ label, .combobox input:required ~ label, .combobox textarea:required ~ label {
   padding-right: 1.2rem;
   color: #ff0000;
 }
-.textbox input:required ~ label::after, .textbox textarea:required ~ label::after, .textarea input:required ~ label::after, .textarea textarea:required ~ label::after {
+.textbox input:required ~ label::after, .textbox textarea:required ~ label::after, .textarea input:required ~ label::after, .textarea textarea:required ~ label::after, .combobox input:required ~ label::after, .combobox textarea:required ~ label::after {
   position: absolute;
   font-size: 0.7rem;
   content: "(*)";
 }
-.textbox textarea, .textarea textarea {
+.textbox textarea, .textarea textarea, .combobox textarea {
   height: calc(100% - 1rem);
   resize: none;
+}
+.textbox .combo-main, .textarea .combo-main, .combobox .combo-main {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0;
+}
+.textbox .combo-main::after, .textarea .combo-main::after, .combobox .combo-main::after {
+  content: "...";
+  position: absolute;
+  right: 0.5rem;
+  line-height: 0.8rem;
+}
+.textbox .combo-main .combo-items, .textarea .combo-main .combo-items, .combobox .combo-main .combo-items {
+  transition: transform 400ms ease-in-out;
+  transform-origin: top;
+  background: #fff;
+  border: solid 1px #BEBEBE;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  width: 100%;
+  transform: scale(1, 0);
+}
+.textbox .combo-main .combo-items .combo-item, .textarea .combo-main .combo-items .combo-item, .combobox .combo-main .combo-items .combo-item {
+  padding: 0.4rem;
+}
+.textbox .combo-main .combo-items .combo-item:hover, .textarea .combo-main .combo-items .combo-item:hover, .combobox .combo-main .combo-items .combo-item:hover {
+  background: #88D5E9;
+}
+.textbox .combo-main .combo-items-active, .textarea .combo-main .combo-items-active, .combobox .combo-main .combo-items-active {
+  transform: scale(1, 1);
 }
 
 .card-group {
