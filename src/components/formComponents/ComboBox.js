@@ -39,9 +39,8 @@ const Combobox = (props) => {
   }
   
   window.onclick = function(event) {
-    console.log(event.target);
+    //event.stopPropagation();
     if (!event.target.classList.contains("combo-main")) {
-      console.log("includes");
       closeComboItems();
     }
   }
@@ -66,10 +65,8 @@ const Combobox = (props) => {
     }
     else {
       setSelectedItem(e.target.id);
-
       const comboItems = e.target.parentNode;
       closeComboItems(comboItems);
-
     }
   }
 

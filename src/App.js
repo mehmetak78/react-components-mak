@@ -10,7 +10,7 @@ function App() {
       <Navbar/>
       <div className="mainPage">
         <h1>Main Page Goes Here</h1>
-        <PageForm1/>
+         <PageForm1/>
       </div>
     </div>
   );

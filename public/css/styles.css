@@ -505,7 +505,6 @@ input[type=number],
 input[type=search],
 input[type=time],
 input[type=url],
-select,
 textarea,
 .combo-main {
   color: #2222dd;
@@ -526,7 +525,6 @@ input[type=number]:hover,
 input[type=search]:hover,
 input[type=time]:hover,
 input[type=url]:hover,
-select:hover,
 textarea:hover,
 .combo-main:hover {
   border: 1px solid #88D5E9;
@@ -540,7 +538,6 @@ input[type=number]:focus,
 input[type=search]:focus,
 input[type=time]:focus,
 input[type=url]:focus,
-select:focus,
 textarea:focus,
 .combo-main:focus {
   box-shadow: 0 0 12px #88D5E9;
@@ -661,6 +658,8 @@ textarea:focus,
 }
 .textbox .combo-main .combo-items-active, .textarea .combo-main .combo-items-active, .combobox .combo-main .combo-items-active {
   transform: scale(1, 1);
+  box-shadow: 0 0 12px #88D5E9;
+  border: 1px solid #88D5E9;
 }
 
 .card-group {

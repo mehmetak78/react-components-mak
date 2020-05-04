@@ -37,7 +37,6 @@ input[type=number],
 input[type=search],
 input[type=time],
 input[type=url],
-select,
 textarea,
 .combo-main {
   color: $color-text-primary;
@@ -186,6 +185,8 @@ textarea,
     }
     .combo-items-active {
       transform: scale(1, 1);
+      box-shadow: 0 0 12px $color-input-hover;
+      border: 1px solid $color-input-hover;
     }
   }
 }
