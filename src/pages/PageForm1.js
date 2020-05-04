@@ -48,7 +48,7 @@ const PageForm1 = () => {
           type="text"
           autoComplete="surname"
           required
-          //multi
+          multi
         />
         <FormButtons
           buttons= {

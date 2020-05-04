@@ -9,6 +9,7 @@ const Combobox = (props) => {
   const {className, id, name, label, type, autoComplete, required, multi} = props;
 
   const [selectedItem, setSelectedItem] = useState(FIRST_SINGLE_MESSAGE);
+
   const [selectedItems] = useState(new Set());
 
   const comboMainClicked = (e) => {
@@ -22,7 +23,28 @@ const Combobox = (props) => {
     if (multi) {
       setSelectedItem(FIRST_MULTI_MESSAGE);
     }
+    // eslint-disable-next-line
   }, []);
+
+  const closeComboItems = (comboItems) => {
+    if (comboItems) {
+      comboItems.classList.remove("combo-items-active");
+    }
+    else {
+      const allComboItems = document.querySelectorAll(".combo-items");
+      allComboItems.forEach(comboItems=> {
+        comboItems.classList.remove("combo-items-active");
+      })
+    }
+  }
+  
+  window.onclick = function(event) {
+    console.log(event.target);
+    if (!event.target.classList.contains("combo-main")) {
+      console.log("includes");
+      closeComboItems();
+    }
+  }
 
   const comboItemClicked = (e) => {
     e.stopPropagation();
@@ -35,7 +57,6 @@ const Combobox = (props) => {
       if (selectedItems.size>1) {
         setSelectedItem(MULTI_SELECTED_MESSAGE);
       } else if (selectedItems.size===1) {
-        console.log(selectedItems.values().next().value);
         setSelectedItem(selectedItems.values().next().value)
       }
       else {
@@ -45,10 +66,17 @@ const Combobox = (props) => {
     }
     else {
       setSelectedItem(e.target.id);
+
       const comboItems = e.target.parentNode;
-      comboItems.classList.toggle("combo-items-active");
+      closeComboItems(comboItems);
+
     }
   }
+
+  const emptyItem = (
+    multi ? "":
+     <div className="combo-item" id={FIRST_SINGLE_MESSAGE} onClick={comboItemClicked}>&nbsp;</div>
+  )
 
   const classNameForRequired = required ? " required": " ";
   return (
@@ -56,6 +84,7 @@ const Combobox = (props) => {
       <div className={"combo-main " + classNameForRequired} onClick={comboMainClicked}>
         {selectedItem}
         <div className="combo-items ">
+          {emptyItem}
           <div className="combo-item" id="Item1" onClick={comboItemClicked}>Item1</div>
           <div className="combo-item" id="Item2" onClick={comboItemClicked}>Item2</div>
           <div className="combo-item" id="Item3" onClick={comboItemClicked}>Item3</div>
