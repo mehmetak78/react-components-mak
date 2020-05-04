@@ -6,6 +6,10 @@ import ToggleButton from "./ToggleButton";
 let toggleButtonOpened = false;
 
 const Navbar = () => {
+
+  document.onclick = function(event) {
+    closeAllDropDown();
+  }
   const toggleButtonClicked = () => {
     const nav_items = document.querySelector(".navbar .nav-items");
     nav_items.classList.toggle("nav-items-active");
@@ -87,8 +91,8 @@ const Navbar = () => {
         <a className="nav-item" onClick={navItemClicked} href="#">About</a>
         <div onClick={dropDownClicked} className="nav-item" id={"div1"}  >Menu 1 &#9662;
           <div className="dropdown-content" id={"inner-div1"}>
-            <a href="#">Link   1</a>
-            <a href="#">Link2</a>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
             <a href="#">Link To a Place</a>
           </div>
         </div>

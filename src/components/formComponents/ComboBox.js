@@ -39,7 +39,6 @@ const Combobox = (props) => {
   }
   
   window.onclick = function(event) {
-    //event.stopPropagation();
     if (!event.target.classList.contains("combo-main")) {
       closeComboItems();
     }
