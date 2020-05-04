@@ -1,11 +1,12 @@
 import React from 'react';
-import TextBox from "../components/formComponents/TextBox";
-import FormButtons from "../components/formComponents/FormButtons";
 import Form from "../components/formComponents/Form";
+import TextBox from "../components/formComponents/TextBox";
 import TextArea from "../components/formComponents/TextArea";
 import Combobox from "../components/formComponents/ComboBox";
+import FormButtons from "../components/formComponents/FormButtons";
 
-const Form1 = () => {
+
+const PageForm1 = () => {
   return (
     <div className="form-container px-2 py-1">
       <h1 className="form-title text-primary ">Account Login </h1>
@@ -47,6 +48,7 @@ const Form1 = () => {
           type="text"
           autoComplete="surname"
           required
+          //multi
         />
         <FormButtons
           buttons= {
@@ -61,4 +63,4 @@ const Form1 = () => {
   );
 };
 
-export default Form1;
+export default PageForm1;

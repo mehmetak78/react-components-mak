@@ -1,16 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 
-$color-text-navbar:  #ffffff;
-$color-text-navbar-hover: #bbffff;
-$color-text-navbar-dropdown-hover: #3366ff;
-$color-bg-navbar1:#2222dd;
-$color-bg-navbar2:#4488ff;
-$font-navbar: 'Acme', sans-serif;
-$font-size-navbar: 1.2rem;
 
-$transition-nav-item: transform ease-out 300ms;
-
-$z-index-navbar-dropdown-content: 999;
 
 .navbar {
   position: relative;

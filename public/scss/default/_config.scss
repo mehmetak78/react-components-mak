@@ -6,6 +6,17 @@ $color-black: #000000;
 $color-bg1:#1066eb;
 $color-bg2:#9ED1FF;
 
+$color-text-navbar:  #ffffff;
+$color-text-navbar-hover: #bbffff;
+$color-text-navbar-dropdown-hover: #3366ff;
+$color-bg-navbar1:#2222dd;
+$color-bg-navbar2:#4488ff;
+$font-navbar: 'Acme', sans-serif;
+$font-size-navbar: 1.2rem;
+
+$transition-nav-item: transform ease-out 300ms;
+
+$z-index-navbar-dropdown-content: 999;
 
 $color-alert: #396206;
 
@@ -26,7 +37,7 @@ $color-form-bg-secondary: #f4f4f4;
 $color-input-background: #fff;
 $color-input-border: #BEBEBE;
 $color-input-hover: #88D5E9;
-
+$color-input-selected: #88D5E9;
 
 
 $color-badge-bg-primary:  #4488ff;

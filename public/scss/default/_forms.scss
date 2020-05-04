@@ -45,6 +45,7 @@ textarea,
   padding: 0.4rem;
   font-size: 1rem;
   border:1px solid $color-input-border;
+  border-radius: 0.2rem;
   transition: all 0.30s ease-in-out;
   outline: none;
   &:hover {
@@ -126,6 +127,18 @@ textarea,
     resize: none;
   }
 
+  .required {
+    ~ label{
+      padding-right: 1.2rem;
+      &::after {
+        position: absolute;
+        font-size: 0.7rem;
+        content: "(*)"
+      }
+      color: $color-text-required;
+    }
+  }
+
   .combo-main {
     position: relative;
     cursor: pointer;
@@ -152,10 +165,22 @@ textarea,
       left: 0;
       width: 100%;
       transform: scale(1, 0);
+      &:hover {
+        border: solid 1px $color-input-hover;
+      }
       .combo-item {
         padding: 0.4rem;
         &:hover {
           background: $color-input-hover;
+        }
+      }
+      .combo-item-selected {
+        background: $color-input-selected;
+        position: relative;
+        &::after {
+          content: "\221A";
+          position: absolute;
+          right: 1rem;
         }
       }
     }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital@1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700;900&display=swap");
@@ -512,6 +513,7 @@ textarea,
   padding: 0.4rem;
   font-size: 1rem;
   border: 1px solid #BEBEBE;
+  border-radius: 0.2rem;
   transition: all 0.3s ease-in-out;
   outline: none;
 }
@@ -604,6 +606,15 @@ textarea:focus,
   height: calc(100% - 1rem);
   resize: none;
 }
+.textbox .required ~ label, .textarea .required ~ label, .combobox .required ~ label {
+  padding-right: 1.2rem;
+  color: #ff0000;
+}
+.textbox .required ~ label::after, .textarea .required ~ label::after, .combobox .required ~ label::after {
+  position: absolute;
+  font-size: 0.7rem;
+  content: "(*)";
+}
 .textbox .combo-main, .textarea .combo-main, .combobox .combo-main {
   position: relative;
   cursor: pointer;
@@ -630,11 +641,23 @@ textarea:focus,
   width: 100%;
   transform: scale(1, 0);
 }
+.textbox .combo-main .combo-items:hover, .textarea .combo-main .combo-items:hover, .combobox .combo-main .combo-items:hover {
+  border: solid 1px #88D5E9;
+}
 .textbox .combo-main .combo-items .combo-item, .textarea .combo-main .combo-items .combo-item, .combobox .combo-main .combo-items .combo-item {
   padding: 0.4rem;
 }
 .textbox .combo-main .combo-items .combo-item:hover, .textarea .combo-main .combo-items .combo-item:hover, .combobox .combo-main .combo-items .combo-item:hover {
   background: #88D5E9;
+}
+.textbox .combo-main .combo-items .combo-item-selected, .textarea .combo-main .combo-items .combo-item-selected, .combobox .combo-main .combo-items .combo-item-selected {
+  background: #88D5E9;
+  position: relative;
+}
+.textbox .combo-main .combo-items .combo-item-selected::after, .textarea .combo-main .combo-items .combo-item-selected::after, .combobox .combo-main .combo-items .combo-item-selected::after {
+  content: "√";
+  position: absolute;
+  right: 1rem;
 }
 .textbox .combo-main .combo-items-active, .textarea .combo-main .combo-items-active, .combobox .combo-main .combo-items-active {
   transform: scale(1, 1);

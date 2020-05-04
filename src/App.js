@@ -1,9 +1,8 @@
 import React from 'react';
 import Navbar from "./components/Navbar";
 
-import CardWithImg from "./components/CardWithImg";
-import Page1 from "./pages/Page1";
-import FormPage1 from "./pages/FormPage1";
+
+import PageForm1 from "./pages/PageForm1";
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
       <Navbar/>
       <div className="mainPage">
         <h1>Main Page Goes Here</h1>
-        <FormPage1/>
+        <PageForm1/>
       </div>
     </div>
   );
