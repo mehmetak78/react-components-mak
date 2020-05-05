@@ -169,6 +169,7 @@ textarea,
       top: calc(100%);
       left: 0;
       width: 100%;
+      z-index: 999;
       transform: scale(1, 0);
       &:hover {
         border: solid 1px $color-input-hover;
@@ -217,7 +218,7 @@ textarea,
     }
     label:before {
       content: '';
-      border: 2px solid $color-input-hover;
+      border: 2px solid $color-input-checkbox-border;
       border-radius: 3px;
       height: 1.4rem;
       width: 1.4rem;
@@ -228,7 +229,7 @@ textarea,
     label:after {
       content: '\221A';
       font-weight: 700;
-      color: $color-input-hover;
+      color: $color-input-checkbox-check;
       position: absolute;
       top: 0.1rem;
       left: 0.5rem;
@@ -237,7 +238,7 @@ textarea,
       transition: transform 0.3s linear, opacity 0.3s linear;
     }
 
-    input[type="checkbox"]:checked+label:after {
+    input[type="checkbox"]:checked + label:after {
       opacity: 1;
       transform: scale(1);
     }
@@ -252,13 +253,13 @@ textarea,
 
 .checkbox-group-column {
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
 .checkbox-group-row {
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 .checkbox-group-focus {

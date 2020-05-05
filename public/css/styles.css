@@ -643,6 +643,7 @@ textarea:focus,
   top: calc(100%);
   left: 0;
   width: 100%;
+  z-index: 999;
   transform: scale(1, 0);
 }
 .textbox .combo-main .combo-items:hover, .textarea .combo-main .combo-items:hover, .combobox .combo-main .combo-items:hover, .checkbox .combo-main .combo-items:hover {
@@ -687,7 +688,7 @@ textarea:focus,
 }
 .textbox .checkbox-item label:before, .textarea .checkbox-item label:before, .combobox .checkbox-item label:before, .checkbox .checkbox-item label:before {
   content: "";
-  border: 2px solid #88D5E9;
+  border: 2px solid #4488ff;
   border-radius: 3px;
   height: 1.4rem;
   width: 1.4rem;
@@ -698,7 +699,7 @@ textarea:focus,
 .textbox .checkbox-item label:after, .textarea .checkbox-item label:after, .combobox .checkbox-item label:after, .checkbox .checkbox-item label:after {
   content: "√";
   font-weight: 700;
-  color: #88D5E9;
+  color: #2222dd;
   position: absolute;
   top: 0.1rem;
   left: 0.5rem;
@@ -719,14 +720,14 @@ textarea:focus,
 
 .checkbox-group-column {
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
 
 .checkbox-group-row {
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 .checkbox-group-focus {
