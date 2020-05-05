@@ -16,19 +16,17 @@ const closeAllComboItems = () => {
 const Combobox = (props) => {
   const {className, name, label, required, multi, hasBlank, items, selectedItems} = props;
 
-  const [selectedItem, setSelectedItem] = useState("");
+  const [comboText, setComboText] = useState("");
 
   useEffect(() => {
     if (multi) {
-      setSelectedItem(FIRST_MULTI_MESSAGE);
+      setComboText(FIRST_MULTI_MESSAGE);
     }
     else {
-      setSelectedItem(FIRST_SINGLE_MESSAGE);
+      setComboText(FIRST_SINGLE_MESSAGE);
     }
     // eslint-disable-next-line
   }, []);
-
-
 
   const closeComboItem = (comboItems) => {
     if (comboItems) {
@@ -56,17 +54,17 @@ const Combobox = (props) => {
         selectedItems.add(e.target.id);
       }
       if (selectedItems.size>1) {
-        setSelectedItem(MULTI_SELECTED_MESSAGE);
+        setComboText(MULTI_SELECTED_MESSAGE);
       } else if (selectedItems.size===1) {
-        setSelectedItem(selectedItems.values().next().value)
+        setComboText(selectedItems.values().next().value)
       }
       else {
-        setSelectedItem(FIRST_MULTI_MESSAGE);
+        setComboText(FIRST_MULTI_MESSAGE);
       }
       e.target.classList.toggle("combo-item-selected");
     }
     else {
-      setSelectedItem(e.target.id);
+      setComboText(e.target.id);
       const comboItems = e.target.parentNode;
       closeComboItem(comboItems);
       selectedItems.forEach(item=> {
@@ -98,7 +96,7 @@ const Combobox = (props) => {
   return (
     <div className= {"combobox " + className}>
       <div className={"combo-main " + classNameForRequired} onClick={comboMainClicked}>
-        {selectedItem}
+        {comboText}
         <div className="combo-items ">
           {emptyItem}
           {cbItems}
