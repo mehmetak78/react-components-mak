@@ -14,7 +14,7 @@ window.onclick = function(event) {
   if (!event.target.classList.contains("nav-item")) {
     closeAllDropDown();
   }
-  if (!event.target.classList.contains("checkBox")) {
+  if (!event.target.classList.contains("checkbox")) {
     cancelFocusCheckBoxGroup();
   }
 

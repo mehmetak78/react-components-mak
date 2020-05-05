@@ -675,7 +675,7 @@ textarea:focus,
   font-size: 1rem;
   padding: 0 0.5rem;
 }
-.textbox .checkbox-item input[type=checkbox], .textarea .checkbox-item input[type=checkbox], .combobox .checkbox-item input[type=checkbox], .checkbox .checkbox-item input[type=checkbox] {
+.textbox .checkbox-item .checkbox, .textarea .checkbox-item .checkbox, .combobox .checkbox-item .checkbox, .checkbox .checkbox-item .checkbox {
   display: none;
 }
 .textbox .checkbox-item label, .textarea .checkbox-item label, .combobox .checkbox-item label, .checkbox .checkbox-item label {
@@ -713,6 +713,7 @@ textarea:focus,
 
 .checkbox-group {
   display: flex;
+  flex-wrap: wrap;
   background: none;
 }
 

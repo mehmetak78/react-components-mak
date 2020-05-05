@@ -55,8 +55,9 @@ const PageForm1 = () => {
         <CheckBoxGroup
           checkBoxItems = {
             [
-              {id: "checkbox1", name: "checkbox1", label: "Checkbox1"},
-              {id: "checkbox2", name: "checkbox2", label: "Checkbox2"}
+              {id: "checkbox1", name: "checkbox1", label: "Checkbox1 Here It İs"},
+              {id: "checkbox2", name: "checkbox2", label: "Checkbox2 Here It İs"},
+              {id: "checkbox3", name: "checkbox3", label: "Checkbox3 Here It İs"},
             ]
           }
           flex

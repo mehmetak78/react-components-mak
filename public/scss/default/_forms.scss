@@ -203,7 +203,7 @@ textarea,
     align-items: center;
     font-size: 1rem;
     padding: 0 0.5rem;
-    input[type="checkbox"] {
+    .checkbox {
       display: none;
     }
 
@@ -246,16 +246,14 @@ textarea,
 
 .checkbox-group {
   display: flex;
+  flex-wrap: wrap;
   background: none;
-
 }
 
 .checkbox-group-column {
-
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 .checkbox-group-row {
   flex-direction: row;

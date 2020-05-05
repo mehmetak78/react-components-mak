@@ -8,7 +8,7 @@ const CheckBox = (props) => {
   return (
     <div className= {"checkbox " +className} >
       <div className="checkbox-item" >
-        <input type="checkbox" className="checkBox" id={item.id} onClick={checkBoxClicked}/>
+        <input type="checkbox" className="checkbox" id={item.id} onClick={checkBoxClicked}/>
         <label htmlFor={item.id}>{item.label}</label>
       </div>
     </div>
