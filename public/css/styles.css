@@ -506,7 +506,8 @@ input[type=search],
 input[type=time],
 input[type=url],
 textarea,
-.combo-main {
+.combo-main,
+.checkbox-group {
   color: #2222dd;
   background: #fff;
   padding: 0.4rem;
@@ -526,7 +527,8 @@ input[type=search]:hover,
 input[type=time]:hover,
 input[type=url]:hover,
 textarea:hover,
-.combo-main:hover {
+.combo-main:hover,
+.checkbox-group:hover {
   border: 1px solid #88D5E9;
 }
 input[type=text]:focus,
@@ -539,7 +541,8 @@ input[type=search]:focus,
 input[type=time]:focus,
 input[type=url]:focus,
 textarea:focus,
-.combo-main:focus {
+.combo-main:focus,
+.checkbox-group:focus {
   box-shadow: 0 0 12px #88D5E9;
   border: 1px solid #88D5E9;
 }
@@ -577,7 +580,7 @@ textarea:focus,
   pointer-events: none;
 }
 
-.textbox, .textarea, .combobox {
+.textbox, .textarea, .combobox, .checkbox {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -586,50 +589,50 @@ textarea:focus,
   height: 100%;
   position: relative;
 }
-.textbox label, .textarea label, .combobox label {
+.textbox label, .textarea label, .combobox label, .checkbox label {
   text-align: right;
   padding-right: 0.2rem;
 }
-.textbox input, .textbox textarea, .textarea input, .textarea textarea, .combobox input, .combobox textarea {
+.textbox input, .textbox textarea, .textbox .checkbox-item, .textarea input, .textarea textarea, .textarea .checkbox-item, .combobox input, .combobox textarea, .combobox .checkbox-item, .checkbox input, .checkbox textarea, .checkbox .checkbox-item {
   flex-shrink: 1;
   width: 100%;
 }
-.textbox input:required ~ label, .textbox textarea:required ~ label, .textarea input:required ~ label, .textarea textarea:required ~ label, .combobox input:required ~ label, .combobox textarea:required ~ label {
+.textbox input:required ~ label, .textbox textarea:required ~ label, .textbox .checkbox-item:required ~ label, .textarea input:required ~ label, .textarea textarea:required ~ label, .textarea .checkbox-item:required ~ label, .combobox input:required ~ label, .combobox textarea:required ~ label, .combobox .checkbox-item:required ~ label, .checkbox input:required ~ label, .checkbox textarea:required ~ label, .checkbox .checkbox-item:required ~ label {
   padding-right: 1.2rem;
   color: #ff0000;
 }
-.textbox input:required ~ label::after, .textbox textarea:required ~ label::after, .textarea input:required ~ label::after, .textarea textarea:required ~ label::after, .combobox input:required ~ label::after, .combobox textarea:required ~ label::after {
+.textbox input:required ~ label::after, .textbox textarea:required ~ label::after, .textbox .checkbox-item:required ~ label::after, .textarea input:required ~ label::after, .textarea textarea:required ~ label::after, .textarea .checkbox-item:required ~ label::after, .combobox input:required ~ label::after, .combobox textarea:required ~ label::after, .combobox .checkbox-item:required ~ label::after, .checkbox input:required ~ label::after, .checkbox textarea:required ~ label::after, .checkbox .checkbox-item:required ~ label::after {
   position: absolute;
   font-size: 0.7rem;
   content: "(*)";
 }
-.textbox textarea, .textarea textarea, .combobox textarea {
+.textbox textarea, .textarea textarea, .combobox textarea, .checkbox textarea {
   height: calc(100% - 1rem);
   resize: none;
 }
-.textbox .required ~ label, .textarea .required ~ label, .combobox .required ~ label {
+.textbox .required ~ label, .textarea .required ~ label, .combobox .required ~ label, .checkbox .required ~ label {
   padding-right: 1.2rem;
   color: #ff0000;
 }
-.textbox .required ~ label::after, .textarea .required ~ label::after, .combobox .required ~ label::after {
+.textbox .required ~ label::after, .textarea .required ~ label::after, .combobox .required ~ label::after, .checkbox .required ~ label::after {
   position: absolute;
   font-size: 0.7rem;
   content: "(*)";
 }
-.textbox .combo-main, .textarea .combo-main, .combobox .combo-main {
+.textbox .combo-main, .textarea .combo-main, .combobox .combo-main, .checkbox .combo-main {
   position: relative;
   cursor: pointer;
   width: 100%;
   padding: 0.5rem;
   margin: 0;
 }
-.textbox .combo-main::after, .textarea .combo-main::after, .combobox .combo-main::after {
+.textbox .combo-main::after, .textarea .combo-main::after, .combobox .combo-main::after, .checkbox .combo-main::after {
   content: "...";
   position: absolute;
   right: 0.5rem;
   line-height: 0.8rem;
 }
-.textbox .combo-main .combo-items, .textarea .combo-main .combo-items, .combobox .combo-main .combo-items {
+.textbox .combo-main .combo-items, .textarea .combo-main .combo-items, .combobox .combo-main .combo-items, .checkbox .combo-main .combo-items {
   transition: transform 400ms ease-in-out;
   transform-origin: top;
   background: #fff;
@@ -642,28 +645,87 @@ textarea:focus,
   width: 100%;
   transform: scale(1, 0);
 }
-.textbox .combo-main .combo-items:hover, .textarea .combo-main .combo-items:hover, .combobox .combo-main .combo-items:hover {
+.textbox .combo-main .combo-items:hover, .textarea .combo-main .combo-items:hover, .combobox .combo-main .combo-items:hover, .checkbox .combo-main .combo-items:hover {
   border: solid 1px #88D5E9;
 }
-.textbox .combo-main .combo-items .combo-item, .textarea .combo-main .combo-items .combo-item, .combobox .combo-main .combo-items .combo-item {
+.textbox .combo-main .combo-items .combo-item, .textarea .combo-main .combo-items .combo-item, .combobox .combo-main .combo-items .combo-item, .checkbox .combo-main .combo-items .combo-item {
   padding: 0.4rem;
 }
-.textbox .combo-main .combo-items .combo-item:hover, .textarea .combo-main .combo-items .combo-item:hover, .combobox .combo-main .combo-items .combo-item:hover {
+.textbox .combo-main .combo-items .combo-item:hover, .textarea .combo-main .combo-items .combo-item:hover, .combobox .combo-main .combo-items .combo-item:hover, .checkbox .combo-main .combo-items .combo-item:hover {
   background: #88D5E9;
 }
-.textbox .combo-main .combo-items .combo-item-selected, .textarea .combo-main .combo-items .combo-item-selected, .combobox .combo-main .combo-items .combo-item-selected {
+.textbox .combo-main .combo-items .combo-item-selected, .textarea .combo-main .combo-items .combo-item-selected, .combobox .combo-main .combo-items .combo-item-selected, .checkbox .combo-main .combo-items .combo-item-selected {
   background: #88D5E9;
   position: relative;
 }
-.textbox .combo-main .combo-items .combo-item-selected::after, .textarea .combo-main .combo-items .combo-item-selected::after, .combobox .combo-main .combo-items .combo-item-selected::after {
+.textbox .combo-main .combo-items .combo-item-selected::after, .textarea .combo-main .combo-items .combo-item-selected::after, .combobox .combo-main .combo-items .combo-item-selected::after, .checkbox .combo-main .combo-items .combo-item-selected::after {
   content: "√";
   position: absolute;
   right: 1rem;
 }
-.textbox .combo-main .combo-items-active, .textarea .combo-main .combo-items-active, .combobox .combo-main .combo-items-active {
+.textbox .combo-main .combo-items-active, .textarea .combo-main .combo-items-active, .combobox .combo-main .combo-items-active, .checkbox .combo-main .combo-items-active {
   transform: scale(1, 1);
   box-shadow: 0 0 12px #88D5E9;
   border: 1px solid #88D5E9;
+}
+.textbox .checkbox-item, .textarea .checkbox-item, .combobox .checkbox-item, .checkbox .checkbox-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+.textbox .checkbox-item input[type=checkbox], .textarea .checkbox-item input[type=checkbox], .combobox .checkbox-item input[type=checkbox], .checkbox .checkbox-item input[type=checkbox] {
+  display: none;
+}
+.textbox .checkbox-item label, .textarea .checkbox-item label, .combobox .checkbox-item label, .checkbox .checkbox-item label {
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  position: relative;
+  padding-left: 2rem;
+}
+.textbox .checkbox-item label:before, .textarea .checkbox-item label:before, .combobox .checkbox-item label:before, .checkbox .checkbox-item label:before {
+  content: "";
+  border: 2px solid #88D5E9;
+  border-radius: 3px;
+  height: 1.4rem;
+  width: 1.4rem;
+  position: absolute;
+  top: -0.2rem;
+  left: 0;
+}
+.textbox .checkbox-item label:after, .textarea .checkbox-item label:after, .combobox .checkbox-item label:after, .checkbox .checkbox-item label:after {
+  content: "√";
+  font-weight: 700;
+  color: #88D5E9;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.5rem;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: transform 0.3s linear, opacity 0.3s linear;
+}
+.textbox .checkbox-item input[type=checkbox]:checked + label:after, .textarea .checkbox-item input[type=checkbox]:checked + label:after, .combobox .checkbox-item input[type=checkbox]:checked + label:after, .checkbox .checkbox-item input[type=checkbox]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.checkbox-group {
+  display: flex;
+  background: none;
+}
+
+.checkbox-group-column {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-group-row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-group {

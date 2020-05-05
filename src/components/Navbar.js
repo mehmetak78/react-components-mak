@@ -5,11 +5,14 @@ import ToggleButton from "./ToggleButton";
 
 let toggleButtonOpened = false;
 
-const Navbar = () => {
+const closeAllDropDown = () => {
+  const dropdownContents = document.querySelectorAll(".dropdown-content");
+  dropdownContents.forEach( (dropdownContent) => {
+    dropdownContent.classList.remove("dropdown-content-active");
+  });
+}
 
-  document.onclick = function(event) {
-    closeAllDropDown();
-  }
+const Navbar = () => {
   const toggleButtonClicked = () => {
     const nav_items = document.querySelector(".navbar .nav-items");
     nav_items.classList.toggle("nav-items-active");
@@ -56,12 +59,7 @@ const Navbar = () => {
     }
   }
 
-  const closeAllDropDown = () => {
-    const dropdownContents = document.querySelectorAll(".dropdown-content");
-    dropdownContents.forEach( (dropdownContent) => {
-      dropdownContent.classList.remove("dropdown-content-active");
-    });
-  }
+
 
   const listenMediaChanges = () => {
     const mql = window.matchMedia('(max-width: 768px)');
@@ -114,4 +112,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export  {Navbar,closeAllDropDown};

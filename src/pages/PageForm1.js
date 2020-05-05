@@ -2,8 +2,10 @@ import React from 'react';
 import Form from "../components/formComponents/Form";
 import TextBox from "../components/formComponents/TextBox";
 import TextArea from "../components/formComponents/TextArea";
-import Combobox from "../components/formComponents/ComboBox";
+import {Combobox} from "../components/formComponents/ComboBox";
 import FormButtons from "../components/formComponents/FormButtons";
+import CheckBox from "../components/formComponents/CheckBox";
+import CheckBoxGroup from "../components/formComponents/CheckBoxGroup";
 
 
 const PageForm1 = () => {
@@ -20,7 +22,7 @@ const PageForm1 = () => {
           required
         />
         <TextArea
-          className="row3"
+          className="row1"
           label="Surname:"
           name="surname"
           type="text"
@@ -50,6 +52,16 @@ const PageForm1 = () => {
           required
           //multi
         />
+        <CheckBoxGroup
+          checkBoxItems = {
+            [
+              {id: "checkbox1", name: "checkbox1", label: "Checkbox1"},
+              {id: "checkbox2", name: "checkbox2", label: "Checkbox2"}
+            ]
+          }
+          flex
+        />
+
         <FormButtons
           buttons= {
             [

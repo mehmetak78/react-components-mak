@@ -4,6 +4,14 @@ const FIRST_SINGLE_MESSAGE = "(Select Item)";
 const FIRST_MULTI_MESSAGE = "(Select Items)";
 const MULTI_SELECTED_MESSAGE = "(Multiple Selected)";
 
+const closeAllComboItems = () => {
+  const allComboItems = document.querySelectorAll(".combo-items");
+  allComboItems.forEach(comboItems=> {
+    comboItems.classList.remove("combo-items-active");
+  })
+  const formButtons = document.querySelector(".form-btn-group");
+  formButtons.classList.remove("form-btn-group-stop-hover");
+}
 
 const Combobox = (props) => {
   const {className, id, name, label, type, autoComplete, required, multi} = props;
@@ -12,8 +20,6 @@ const Combobox = (props) => {
 
   const [selectedItems] = useState(new Set());
 
-
-
   useEffect(() => {
     if (multi) {
       setSelectedItem(FIRST_MULTI_MESSAGE);
@@ -21,26 +27,16 @@ const Combobox = (props) => {
     // eslint-disable-next-line
   }, []);
 
-  const closeComboItems = (comboItems) => {
+
+
+  const closeComboItem = (comboItems) => {
     if (comboItems) {
       comboItems.classList.remove("combo-items-active");
+      const formButtons = document.querySelector(".form-btn-group");
+      formButtons.classList.remove("form-btn-group-stop-hover");
     }
-    else {
-      const allComboItems = document.querySelectorAll(".combo-items");
-      allComboItems.forEach(comboItems=> {
-        comboItems.classList.remove("combo-items-active");
-      })
-    }
-    const formButtons = document.querySelector(".form-btn-group");
-    formButtons.classList.remove("form-btn-group-stop-hover");
   }
   
-  window.onclick = function(event) {
-    if (!event.target.classList.contains("combo-main")) {
-      closeComboItems();
-    }
-  }
-
   const comboMainClicked = (e) => {
     const comboItems = e.target.querySelector(".combo-items");
     if (comboItems) {
@@ -73,7 +69,7 @@ const Combobox = (props) => {
     else {
       setSelectedItem(e.target.id);
       const comboItems = e.target.parentNode;
-      closeComboItems(comboItems);
+      closeComboItem(comboItems);
     }
   }
 
@@ -111,4 +107,4 @@ Combobox.defaultProps = {
   required: false,
   multi: false
 }
-export default Combobox;
+export {Combobox, closeAllComboItems};

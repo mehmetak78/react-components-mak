@@ -1,8 +1,19 @@
 import React from 'react';
-import Navbar from "./components/Navbar";
-
+import {Navbar,closeAllDropDown} from "./components/Navbar";
+import {closeAllComboItems} from "./components/formComponents/ComboBox";
 
 import PageForm1 from "./pages/PageForm1";
+
+window.onclick = function(event) {
+  console.log("App.window.onClick()");
+  console.log(event.target);
+  if (!event.target.classList.contains("combo-main")) {
+    closeAllComboItems();
+  }
+  if (!event.target.classList.contains("nav-item")) {
+    closeAllDropDown();
+  }
+}
 
 function App() {
   return (
