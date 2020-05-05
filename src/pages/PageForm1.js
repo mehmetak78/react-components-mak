@@ -86,7 +86,7 @@ const PageForm1 = () => {
           type="text"
           autoComplete="surname"
           required
-          //multi
+          multi
           hasBlank
           selectedItems={formData.combo1SelectedItems}
           items ={
