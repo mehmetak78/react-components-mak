@@ -263,7 +263,10 @@ textarea,
   justify-content: center;
 }
 
-
+.checkbox-group-focus {
+  box-shadow: 0 0 12px $color-input-hover;
+  border: 1px solid $color-input-hover;
+}
 
 
 

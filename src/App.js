@@ -1,6 +1,7 @@
 import React from 'react';
 import {Navbar,closeAllDropDown} from "./components/Navbar";
 import {closeAllComboItems} from "./components/formComponents/ComboBox";
+import {cancelFocusCheckBoxGroup} from "./components/formComponents/CheckBoxGroup";
 
 import PageForm1 from "./pages/PageForm1";
 
@@ -13,6 +14,11 @@ window.onclick = function(event) {
   if (!event.target.classList.contains("nav-item")) {
     closeAllDropDown();
   }
+  if (!event.target.classList.contains("checkBox")) {
+    cancelFocusCheckBoxGroup();
+  }
+
+
 }
 
 function App() {

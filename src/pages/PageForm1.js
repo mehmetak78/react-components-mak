@@ -5,7 +5,7 @@ import TextArea from "../components/formComponents/TextArea";
 import {Combobox} from "../components/formComponents/ComboBox";
 import FormButtons from "../components/formComponents/FormButtons";
 import CheckBox from "../components/formComponents/CheckBox";
-import CheckBoxGroup from "../components/formComponents/CheckBoxGroup";
+import {CheckBoxGroup} from "../components/formComponents/CheckBoxGroup";
 
 
 const PageForm1 = () => {
