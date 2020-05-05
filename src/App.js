@@ -6,8 +6,8 @@ import {cancelFocusCheckBoxGroup} from "./components/formComponents/CheckBoxGrou
 import PageForm1 from "./pages/PageForm1";
 
 window.onclick = function(event) {
-  console.log("App.window.onClick()");
-  console.log(event.target);
+  // console.log("App.window.onClick()");
+  // console.log(event.target);
   if (!event.target.classList.contains("combo-main")) {
     closeAllComboItems();
   }

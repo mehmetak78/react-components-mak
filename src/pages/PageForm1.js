@@ -4,7 +4,6 @@ import TextBox from "../components/formComponents/TextBox";
 import TextArea from "../components/formComponents/TextArea";
 import {Combobox} from "../components/formComponents/ComboBox";
 import FormButtons from "../components/formComponents/FormButtons";
-import CheckBox from "../components/formComponents/CheckBox";
 import {CheckBoxGroup} from "../components/formComponents/CheckBoxGroup";
 
 
@@ -14,19 +13,28 @@ const PageForm1 = () => {
     name: "",
     surname: "",
     email: "",
-    city: ""
+    city: "",
+    checkbox1: true,
+    checkbox2: false,
+    checkbox3: false,
+    combo1SelectedItems: new Set()
   });
 
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("OnSubmit")
     console.log(formData)
   }
 
   const onChange = (e => {
-    console.log("OnChange");
-    setFormData({...formData, [e.target.name]: e.target.value})
+    console.log("OnChange")
+    console.log(e.target)
+    if (e.target.type==="checkbox") {
+      setFormData({...formData, [e.target.name]: e.target.checked})
+    }
+    else {
+      setFormData({...formData, [e.target.name]: e.target.value})
+    }
   })
 
   return (
@@ -74,21 +82,32 @@ const PageForm1 = () => {
         />
         <Combobox
           label="Combo:"
-          name="surname"
+          name="cb1"
           type="text"
           autoComplete="surname"
-          //required
+          required
           //multi
+          hasBlank
+          selectedItems={formData.combo1SelectedItems}
+          items ={
+            [
+              {id: "Combobox Item 1"},
+              {id: "Combobox Item 2"},
+              {id: "Combobox Item 3"},
+            ]
+          }
         />
         <CheckBoxGroup
-          checkBoxItems = {
+          items = {
             [
-              {id: "checkbox1", name: "checkbox1", label: "Check Here It İs"},
-              {id: "checkbox2", name: "checkbox2", label: "Checkbox2 Here It İs"},
-              {id: "checkbox3", name: "checkbox3", label: "Checkbox3 Here It İs"},
+              {id: "checkbox1", name: "checkbox1", checked:formData.checkbox1 ,label: "Check Here It İs"},
+              {id: "checkbox2", name: "checkbox2", checked:formData.checkbox2, label: "Checkbox2 Here It İs"},
+              {id: "checkbox3", name: "checkbox3", checked:formData.checkbox3, label: "Checkbox3 Here It İs"},
             ]
           }
           //flex
+
+          onChange={onChange}
         />
 
         <FormButtons

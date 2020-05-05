@@ -688,7 +688,7 @@ textarea:focus,
 }
 .textbox .checkbox-item label:before, .textarea .checkbox-item label:before, .combobox .checkbox-item label:before, .checkbox .checkbox-item label:before {
   content: "";
-  border: 2px solid #4488ff;
+  border: 2px solid #9ED1FF;
   border-radius: 3px;
   height: 1.4rem;
   width: 1.4rem;

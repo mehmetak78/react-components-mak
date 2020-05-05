@@ -14,15 +14,16 @@ const closeAllComboItems = () => {
 }
 
 const Combobox = (props) => {
-  const {className, id, name, label, type, autoComplete, required, multi} = props;
+  const {className, name, label, required, multi, hasBlank, items, selectedItems} = props;
 
-  const [selectedItem, setSelectedItem] = useState(FIRST_SINGLE_MESSAGE);
-
-  const [selectedItems] = useState(new Set());
+  const [selectedItem, setSelectedItem] = useState("");
 
   useEffect(() => {
     if (multi) {
       setSelectedItem(FIRST_MULTI_MESSAGE);
+    }
+    else {
+      setSelectedItem(FIRST_SINGLE_MESSAGE);
     }
     // eslint-disable-next-line
   }, []);
@@ -44,8 +45,6 @@ const Combobox = (props) => {
       const formButtons = document.querySelector(".form-btn-group");
       formButtons.classList.toggle("form-btn-group-stop-hover");
     }
-
-
   }
 
   const comboItemClicked = (e) => {
@@ -70,12 +69,29 @@ const Combobox = (props) => {
       setSelectedItem(e.target.id);
       const comboItems = e.target.parentNode;
       closeComboItem(comboItems);
+      selectedItems.forEach(item=> {
+        selectedItems.delete(item);
+      })
+      const previousItem = comboItems.querySelector(".combo-item-selected");
+      if (previousItem) {
+        previousItem.classList.remove("combo-item-selected")
+      }
+      if (e.target.id !== FIRST_SINGLE_MESSAGE) {
+        selectedItems.add(e.target.id);
+        e.target.classList.add("combo-item-selected");
+      }
     }
   }
 
   const emptyItem = (
-    multi ? "":
-     <div className="combo-item" id={FIRST_SINGLE_MESSAGE} onClick={comboItemClicked}>&nbsp;</div>
+    multi ? "" :
+     hasBlank ? <div className="combo-item" id={FIRST_SINGLE_MESSAGE} onClick={comboItemClicked}>&nbsp;</div> : ""
+  )
+
+  const cbItems = (
+    items.map(item=> {
+      return <div className="combo-item" id={item.id} onClick={comboItemClicked}>{item.id}</div>
+    })
   )
 
   const classNameForRequired = required ? " required": " ";
@@ -85,12 +101,7 @@ const Combobox = (props) => {
         {selectedItem}
         <div className="combo-items ">
           {emptyItem}
-          <div className="combo-item" id="Item1" onClick={comboItemClicked}>Item1</div>
-          <div className="combo-item" id="Item2" onClick={comboItemClicked}>Item2</div>
-          <div className="combo-item" id="Item3" onClick={comboItemClicked}>Item3</div>
-          <div className="combo-item" id="Item4" onClick={comboItemClicked}>Item4</div>
-          <div className="combo-item" id="Item5" onClick={comboItemClicked}>Item5</div>
-          <div className="combo-item" id="Item6" onClick={comboItemClicked}>Item6</div>
+          {cbItems}
         </div>
       </div>
       <label htmlFor={name}>{label}</label>
@@ -105,6 +116,7 @@ Combobox.defaultProps = {
   type: "text",
   autoComplete: "",
   required: false,
-  multi: false
+  multi: false,
+  hasBlank: false
 }
 export {Combobox, closeAllComboItems};
