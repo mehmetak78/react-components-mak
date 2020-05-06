@@ -202,14 +202,14 @@ textarea,
       font-size: 1rem;
       text-align: center;
       position: relative;
-      padding-left: 2rem;
+      padding-left: 32px;
       &:before {
         content: '';
         border: 2px solid $color-input-checkbox-border;
-        height: 1.4rem;
-        width: 1.4rem;
+        height: 22px;
+        width: 22px;
         position: absolute;
-        top: -0.2rem;
+        top: -3px;
         left: 0;
       }
       &:after {
@@ -227,9 +227,8 @@ textarea,
       }
       &:after {
         content: '\221A';
-        font-weight: 700;
-        top: 0.1rem;
-        left: 0.5rem;
+        top: 2px;
+        left: 8px;
       }
     }
     .label-radio {
@@ -237,13 +236,11 @@ textarea,
         border-radius: 50%;
       }
       &::after {
-        content: '';
-        background: $color-input-checkbox-border;
-        width: 1rem;
-        height: 1rem;
-        border-radius: 50%;
-        top: 0.17rem;
-        left: 0.33rem;
+        content: '\2022';
+        font-size: 3.5rem;
+        line-height: 18px;
+        top: 1px;
+        left: 1px;
       }
     }
   }

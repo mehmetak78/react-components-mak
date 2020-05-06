@@ -675,15 +675,15 @@ textarea:focus,
   font-size: 1rem;
   text-align: center;
   position: relative;
-  padding-left: 2rem;
+  padding-left: 32px;
 }
 .textbox .checkbox-item .label-checkbox:before, .textbox .checkbox-item .label-radio:before, .textbox .radiobutton-item .label-checkbox:before, .textbox .radiobutton-item .label-radio:before, .textarea .checkbox-item .label-checkbox:before, .textarea .checkbox-item .label-radio:before, .textarea .radiobutton-item .label-checkbox:before, .textarea .radiobutton-item .label-radio:before, .combobox .checkbox-item .label-checkbox:before, .combobox .checkbox-item .label-radio:before, .combobox .radiobutton-item .label-checkbox:before, .combobox .radiobutton-item .label-radio:before, .checkbox .checkbox-item .label-checkbox:before, .checkbox .checkbox-item .label-radio:before, .checkbox .radiobutton-item .label-checkbox:before, .checkbox .radiobutton-item .label-radio:before, .radiobutton .checkbox-item .label-checkbox:before, .radiobutton .checkbox-item .label-radio:before, .radiobutton .radiobutton-item .label-checkbox:before, .radiobutton .radiobutton-item .label-radio:before {
   content: "";
   border: 2px solid #1cbe9d;
-  height: 1.4rem;
-  width: 1.4rem;
+  height: 22px;
+  width: 22px;
   position: absolute;
-  top: -0.2rem;
+  top: -3px;
   left: 0;
 }
 .textbox .checkbox-item .label-checkbox:after, .textbox .checkbox-item .label-radio:after, .textbox .radiobutton-item .label-checkbox:after, .textbox .radiobutton-item .label-radio:after, .textarea .checkbox-item .label-checkbox:after, .textarea .checkbox-item .label-radio:after, .textarea .radiobutton-item .label-checkbox:after, .textarea .radiobutton-item .label-radio:after, .combobox .checkbox-item .label-checkbox:after, .combobox .checkbox-item .label-radio:after, .combobox .radiobutton-item .label-checkbox:after, .combobox .radiobutton-item .label-radio:after, .checkbox .checkbox-item .label-checkbox:after, .checkbox .checkbox-item .label-radio:after, .checkbox .radiobutton-item .label-checkbox:after, .checkbox .radiobutton-item .label-radio:after, .radiobutton .checkbox-item .label-checkbox:after, .radiobutton .checkbox-item .label-radio:after, .radiobutton .radiobutton-item .label-checkbox:after, .radiobutton .radiobutton-item .label-radio:after {
@@ -698,21 +698,18 @@ textarea:focus,
 }
 .textbox .checkbox-item .label-checkbox:after, .textbox .radiobutton-item .label-checkbox:after, .textarea .checkbox-item .label-checkbox:after, .textarea .radiobutton-item .label-checkbox:after, .combobox .checkbox-item .label-checkbox:after, .combobox .radiobutton-item .label-checkbox:after, .checkbox .checkbox-item .label-checkbox:after, .checkbox .radiobutton-item .label-checkbox:after, .radiobutton .checkbox-item .label-checkbox:after, .radiobutton .radiobutton-item .label-checkbox:after {
   content: "√";
-  font-weight: 700;
-  top: 0.1rem;
-  left: 0.5rem;
+  top: 2px;
+  left: 8px;
 }
 .textbox .checkbox-item .label-radio::before, .textbox .radiobutton-item .label-radio::before, .textarea .checkbox-item .label-radio::before, .textarea .radiobutton-item .label-radio::before, .combobox .checkbox-item .label-radio::before, .combobox .radiobutton-item .label-radio::before, .checkbox .checkbox-item .label-radio::before, .checkbox .radiobutton-item .label-radio::before, .radiobutton .checkbox-item .label-radio::before, .radiobutton .radiobutton-item .label-radio::before {
   border-radius: 50%;
 }
 .textbox .checkbox-item .label-radio::after, .textbox .radiobutton-item .label-radio::after, .textarea .checkbox-item .label-radio::after, .textarea .radiobutton-item .label-radio::after, .combobox .checkbox-item .label-radio::after, .combobox .radiobutton-item .label-radio::after, .checkbox .checkbox-item .label-radio::after, .checkbox .radiobutton-item .label-radio::after, .radiobutton .checkbox-item .label-radio::after, .radiobutton .radiobutton-item .label-radio::after {
-  content: "";
-  background: #1cbe9d;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  top: 0.17rem;
-  left: 0.33rem;
+  content: "•";
+  font-size: 3.5rem;
+  line-height: 18px;
+  top: 1px;
+  left: 1px;
 }
 
 .checkbox-group, .radiobutton-group {
