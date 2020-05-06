@@ -60,15 +60,14 @@ const PageForm1 = () => {
           //required
           onChange={onChange}
         />
-        <TextArea
-          className="row1"
+        <TextBox
+          //className="row1"
           label="Surname:"
           id="surname"
           name="surname"
           value={formData.surname}
           type="text"
           autoComplete="surname"
-          form="form1"
           //required
           onChange={onChange}
         />
@@ -82,16 +81,7 @@ const PageForm1 = () => {
           //required
           onChange={onChange}
         />
-        <TextBox
-          label="City:"
-          id="city"
-          name="city"
-          value={formData.city}
-          type="text"
-          autoComplete="city"
-          //required
-          onChange={onChange}
-        />
+
         <Combobox
           label="Combo:"
           id="cb1"
@@ -109,6 +99,18 @@ const PageForm1 = () => {
               {id: "Combobox Item 3"},
             ]
           }
+        />
+        <TextArea
+          className="row3"
+          label="City:"
+          id="city"
+          name="city"
+          value={formData.city}
+          type="text"
+          autoComplete="city"
+          form="form1"
+          //required
+          onChange={onChange}
         />
         <CheckBoxGroup
           items = {
