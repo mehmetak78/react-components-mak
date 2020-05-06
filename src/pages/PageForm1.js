@@ -28,9 +28,11 @@ const PageForm1 = () => {
   }
 
   const onChange = (e => {
+    console.log("OnChange"+e.target.id);
     if (e.target.type==="checkbox") {
       setFormData({...formData, [e.target.name]: e.target.checked})
     }
+
     else {
       setFormData({...formData, [e.target.name]: e.target.value})
     }
@@ -99,9 +101,9 @@ const PageForm1 = () => {
         <CheckBoxGroup
           items = {
             [
-              {id: "checkbox1", name: "checkbox1", checked:formData.checkbox1 ,label: "Check Here It İs"},
-              {id: "checkbox2", name: "checkbox2", checked:formData.checkbox2, label: "Checkbox2 Here It İs"},
-              {id: "checkbox3", name: "checkbox3", checked:formData.checkbox3, label: "Checkbox3 Here It İs"},
+              {id: "checkbox1", name: "checkbox1", checked:formData["checkbox1"] ,label: "Check Here It İs"},
+              {id: "checkbox2", name: "checkbox2", checked:formData["checkbox2"] , label: "Checkbox2 Here It İs"},
+              {id: "checkbox3", name: "checkbox3", checked:formData["checkbox3"] , label: "Checkbox3 Here It İs"},
             ]
           }
           //flex

@@ -9,7 +9,7 @@ const cancelFocusRadioButtonGroup = () => {
 }
 
 const RadioButtonGroup = (props) => {
-  const {className, items, flex, groupName, groupLabel} = props;
+  const {className, items, flex, groupName, groupLabel, onChange} = props;
 
   const radioButtonClicked = (event) => {
     const checkBoxGroupElem = event.target.parentNode.parentNode.parentNode;
@@ -22,7 +22,7 @@ const RadioButtonGroup = (props) => {
       {items.map(item => (
         <div className= {"radiobutton " +className} >
           <div className="radiobutton-item" >
-            <input type="radio" id={item.id} name={groupName} onClick={radioButtonClicked}/>
+            <input type="radio" id={item.id} name={groupName} onClick={radioButtonClicked} onChange={onChange}/>
             <label htmlFor={item.id}>{item.label}</label>
           </div>
         </div>

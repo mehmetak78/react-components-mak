@@ -743,7 +743,6 @@ textarea:focus,
 }
 .checkbox-group .group-label, .radiobutton-group .group-label {
   background: #f2f2f2;
-  box-shadow: 0 0 12px #BEBEBE;
   border-radius: 55px;
   padding: 0 0.2rem 0 0.4rem;
   position: absolute;
