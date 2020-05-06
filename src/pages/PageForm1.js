@@ -5,6 +5,7 @@ import TextArea from "../components/formComponents/TextArea";
 import {Combobox} from "../components/formComponents/ComboBox";
 import FormButtons from "../components/formComponents/FormButtons";
 import {CheckBoxGroup} from "../components/formComponents/CheckBoxGroup";
+import {RadioButtonGroup} from "../components/formComponents/RadioButtonGroup";
 
 
 const PageForm1 = () => {
@@ -27,8 +28,6 @@ const PageForm1 = () => {
   }
 
   const onChange = (e => {
-    console.log("OnChange")
-    console.log(e.target)
     if (e.target.type==="checkbox") {
       setFormData({...formData, [e.target.name]: e.target.checked})
     }
@@ -106,7 +105,19 @@ const PageForm1 = () => {
             ]
           }
           //flex
+          onChange={onChange}
+        />
 
+        <RadioButtonGroup
+          groupName = "radiourGroup1"
+          items = {
+            [
+              {id: "radio1", name: "checkbox1", label: "Radio Here It İs"},
+              {id: "radio2", name: "checkbox2",  label: "Radio Button 1 Here It İs"},
+              {id: "radio3", name: "checkbox3",  label: "Radio Button 2 Here It İs"},
+            ]
+          }
+          //flex
           onChange={onChange}
         />
 

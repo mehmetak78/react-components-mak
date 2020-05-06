@@ -9,7 +9,7 @@ const cancelFocusCheckBoxGroup = () => {
 }
 
 const CheckBoxGroup = (props) => {
-  const {className, items, flex, onChange} = props;
+  const {className, groupLabel, items, flex, onChange} = props;
 
   const checkBoxClicked = (event) => {
     const checkBoxGroupElem = event.target.parentNode.parentNode.parentNode;
@@ -18,16 +18,17 @@ const CheckBoxGroup = (props) => {
 
   return (
     <div className= {"checkbox-group " + (flex ? "checkbox-group-row " : " checkbox-group-column ") + className }
-
     >
       {items.map(item => (
         <CheckBox item={item} checkBoxClicked={checkBoxClicked} onChange={onChange}/>
       ))}
+      <span class="group-label">{groupLabel}</span>
     </div>
   );
 };
 
 CheckBoxGroup.defaultProps = {
+  groupLabel: "Checkbox Group",
   items: [
     {
       id: "checkbox1",

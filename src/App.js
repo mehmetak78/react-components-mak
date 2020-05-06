@@ -2,20 +2,24 @@ import React from 'react';
 import {Navbar,closeAllDropDown} from "./components/Navbar";
 import {closeAllComboItems} from "./components/formComponents/ComboBox";
 import {cancelFocusCheckBoxGroup} from "./components/formComponents/CheckBoxGroup";
+import {cancelFocusRadioButtonGroup} from "./components/formComponents/RadioButtonGroup";
 
 import PageForm1 from "./pages/PageForm1";
 
 window.onclick = function(event) {
   // console.log("App.window.onClick()");
-  // console.log(event.target);
+  // console.log(event.target.type);
   if (!event.target.classList.contains("combo-main")) {
     closeAllComboItems();
   }
   if (!event.target.classList.contains("nav-item")) {
     closeAllDropDown();
   }
-  if (!event.target.classList.contains("checkbox")) {
+  if (event.target.type!=="checkbox") {
     cancelFocusCheckBoxGroup();
+  }
+  if (event.target.type!=="radio") {
+    cancelFocusRadioButtonGroup();
   }
 
 
