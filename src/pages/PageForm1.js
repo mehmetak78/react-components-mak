@@ -118,7 +118,7 @@ const PageForm1 = () => {
               {id: "checkbox3", name: "checkbox3", checked:formData.checkBoxGroup1["checkbox3"] , label: "Checkbox3 Here It İs"},
             ]
           }
-          //flex
+          flex
           onChange={onChange}
         />
 
@@ -131,7 +131,7 @@ const PageForm1 = () => {
               {id: "radio3", name: "radio3", checked:formData.radioButtonGroup1Selected==="radio3", label: "Radio Button 2 Here It İs"},
             ]
           }
-          //flex
+          flex
           onChange={onChange}
         />
 

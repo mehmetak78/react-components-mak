@@ -656,82 +656,63 @@ textarea:focus,
   box-shadow: 0 0 12px #88D5E9;
   border: 1px solid #88D5E9;
 }
-.textbox .checkbox-item, .textarea .checkbox-item, .combobox .checkbox-item, .checkbox .checkbox-item, .radiobutton .checkbox-item {
+.textbox .checkbox-item, .textbox .radiobutton-item, .textarea .checkbox-item, .textarea .radiobutton-item, .combobox .checkbox-item, .combobox .radiobutton-item, .checkbox .checkbox-item, .checkbox .radiobutton-item, .radiobutton .checkbox-item, .radiobutton .radiobutton-item {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   padding: 0 0.5rem;
 }
-.textbox .checkbox-item input, .textarea .checkbox-item input, .combobox .checkbox-item input, .checkbox .checkbox-item input, .radiobutton .checkbox-item input {
+.textbox .checkbox-item input, .textbox .radiobutton-item input, .textarea .checkbox-item input, .textarea .radiobutton-item input, .combobox .checkbox-item input, .combobox .radiobutton-item input, .checkbox .checkbox-item input, .checkbox .radiobutton-item input, .radiobutton .checkbox-item input, .radiobutton .radiobutton-item input {
   display: none;
 }
-.textbox .checkbox-item label, .textarea .checkbox-item label, .combobox .checkbox-item label, .checkbox .checkbox-item label, .radiobutton .checkbox-item label {
+.textbox .checkbox-item input:checked + label:after, .textbox .radiobutton-item input:checked + label:after, .textarea .checkbox-item input:checked + label:after, .textarea .radiobutton-item input:checked + label:after, .combobox .checkbox-item input:checked + label:after, .combobox .radiobutton-item input:checked + label:after, .checkbox .checkbox-item input:checked + label:after, .checkbox .radiobutton-item input:checked + label:after, .radiobutton .checkbox-item input:checked + label:after, .radiobutton .radiobutton-item input:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.textbox .checkbox-item .label-checkbox, .textbox .checkbox-item .label-radio, .textbox .radiobutton-item .label-checkbox, .textbox .radiobutton-item .label-radio, .textarea .checkbox-item .label-checkbox, .textarea .checkbox-item .label-radio, .textarea .radiobutton-item .label-checkbox, .textarea .radiobutton-item .label-radio, .combobox .checkbox-item .label-checkbox, .combobox .checkbox-item .label-radio, .combobox .radiobutton-item .label-checkbox, .combobox .radiobutton-item .label-radio, .checkbox .checkbox-item .label-checkbox, .checkbox .checkbox-item .label-radio, .checkbox .radiobutton-item .label-checkbox, .checkbox .radiobutton-item .label-radio, .radiobutton .checkbox-item .label-checkbox, .radiobutton .checkbox-item .label-radio, .radiobutton .radiobutton-item .label-checkbox, .radiobutton .radiobutton-item .label-radio {
   cursor: pointer;
   font-size: 1rem;
   text-align: center;
   position: relative;
   padding-left: 2rem;
 }
-.textbox .checkbox-item label:before, .textarea .checkbox-item label:before, .combobox .checkbox-item label:before, .checkbox .checkbox-item label:before, .radiobutton .checkbox-item label:before {
+.textbox .checkbox-item .label-checkbox:before, .textbox .checkbox-item .label-radio:before, .textbox .radiobutton-item .label-checkbox:before, .textbox .radiobutton-item .label-radio:before, .textarea .checkbox-item .label-checkbox:before, .textarea .checkbox-item .label-radio:before, .textarea .radiobutton-item .label-checkbox:before, .textarea .radiobutton-item .label-radio:before, .combobox .checkbox-item .label-checkbox:before, .combobox .checkbox-item .label-radio:before, .combobox .radiobutton-item .label-checkbox:before, .combobox .radiobutton-item .label-radio:before, .checkbox .checkbox-item .label-checkbox:before, .checkbox .checkbox-item .label-radio:before, .checkbox .radiobutton-item .label-checkbox:before, .checkbox .radiobutton-item .label-radio:before, .radiobutton .checkbox-item .label-checkbox:before, .radiobutton .checkbox-item .label-radio:before, .radiobutton .radiobutton-item .label-checkbox:before, .radiobutton .radiobutton-item .label-radio:before {
   content: "";
   border: 2px solid #1cbe9d;
-  border-radius: 3px;
   height: 1.4rem;
   width: 1.4rem;
   position: absolute;
   top: -0.2rem;
   left: 0;
 }
-.textbox .checkbox-item label:after, .textarea .checkbox-item label:after, .combobox .checkbox-item label:after, .checkbox .checkbox-item label:after, .radiobutton .checkbox-item label:after {
+.textbox .checkbox-item .label-checkbox:after, .textbox .checkbox-item .label-radio:after, .textbox .radiobutton-item .label-checkbox:after, .textbox .radiobutton-item .label-radio:after, .textarea .checkbox-item .label-checkbox:after, .textarea .checkbox-item .label-radio:after, .textarea .radiobutton-item .label-checkbox:after, .textarea .radiobutton-item .label-radio:after, .combobox .checkbox-item .label-checkbox:after, .combobox .checkbox-item .label-radio:after, .combobox .radiobutton-item .label-checkbox:after, .combobox .radiobutton-item .label-radio:after, .checkbox .checkbox-item .label-checkbox:after, .checkbox .checkbox-item .label-radio:after, .checkbox .radiobutton-item .label-checkbox:after, .checkbox .radiobutton-item .label-radio:after, .radiobutton .checkbox-item .label-checkbox:after, .radiobutton .checkbox-item .label-radio:after, .radiobutton .radiobutton-item .label-checkbox:after, .radiobutton .radiobutton-item .label-radio:after {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.1);
+  transition: transform 0.3s linear, opacity 0.3s ease-in-out;
+  color: #1cbe9d;
+}
+.textbox .checkbox-item .label-checkbox:before, .textbox .radiobutton-item .label-checkbox:before, .textarea .checkbox-item .label-checkbox:before, .textarea .radiobutton-item .label-checkbox:before, .combobox .checkbox-item .label-checkbox:before, .combobox .radiobutton-item .label-checkbox:before, .checkbox .checkbox-item .label-checkbox:before, .checkbox .radiobutton-item .label-checkbox:before, .radiobutton .checkbox-item .label-checkbox:before, .radiobutton .radiobutton-item .label-checkbox:before {
+  border-radius: 3px;
+}
+.textbox .checkbox-item .label-checkbox:after, .textbox .radiobutton-item .label-checkbox:after, .textarea .checkbox-item .label-checkbox:after, .textarea .radiobutton-item .label-checkbox:after, .combobox .checkbox-item .label-checkbox:after, .combobox .radiobutton-item .label-checkbox:after, .checkbox .checkbox-item .label-checkbox:after, .checkbox .radiobutton-item .label-checkbox:after, .radiobutton .checkbox-item .label-checkbox:after, .radiobutton .radiobutton-item .label-checkbox:after {
   content: "√";
   font-weight: 700;
-  color: #1cbe9d;
-  position: absolute;
   top: 0.1rem;
   left: 0.5rem;
-  opacity: 0;
-  transform: scale(1.5);
-  transition: transform 0.3s linear, opacity 0.3s linear;
 }
-.textbox .checkbox-item input:checked + label:after, .textarea .checkbox-item input:checked + label:after, .combobox .checkbox-item input:checked + label:after, .checkbox .checkbox-item input:checked + label:after, .radiobutton .checkbox-item input:checked + label:after {
-  opacity: 1;
-  transform: scale(1);
-}
-.textbox .radiobutton-item input, .textarea .radiobutton-item input, .combobox .radiobutton-item input, .checkbox .radiobutton-item input, .radiobutton .radiobutton-item input {
-  display: none;
-}
-.textbox .radiobutton-item input:checked + label:after, .textarea .radiobutton-item input:checked + label:after, .combobox .radiobutton-item input:checked + label:after, .checkbox .radiobutton-item input:checked + label:after, .radiobutton .radiobutton-item input:checked + label:after {
-  opacity: 1;
-  transform: scale(1);
-}
-.textbox .radiobutton-item label, .textarea .radiobutton-item label, .combobox .radiobutton-item label, .checkbox .radiobutton-item label, .radiobutton .radiobutton-item label {
-  position: relative;
-  padding: 3px 0 0 40px;
-  cursor: pointer;
-}
-.textbox .radiobutton-item label::before, .textarea .radiobutton-item label::before, .combobox .radiobutton-item label::before, .checkbox .radiobutton-item label::before, .radiobutton .radiobutton-item label::before {
-  content: "";
-  border: 2px solid #1cbe9d;
-  height: 1.4rem;
-  width: 1.4rem;
+.textbox .checkbox-item .label-radio::before, .textbox .radiobutton-item .label-radio::before, .textarea .checkbox-item .label-radio::before, .textarea .radiobutton-item .label-radio::before, .combobox .checkbox-item .label-radio::before, .combobox .radiobutton-item .label-radio::before, .checkbox .checkbox-item .label-radio::before, .checkbox .radiobutton-item .label-radio::before, .radiobutton .checkbox-item .label-radio::before, .radiobutton .radiobutton-item .label-radio::before {
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
-.textbox .radiobutton-item label::after, .textarea .radiobutton-item label::after, .combobox .radiobutton-item label::after, .checkbox .radiobutton-item label::after, .radiobutton .radiobutton-item label::after {
+.textbox .checkbox-item .label-radio::after, .textbox .radiobutton-item .label-radio::after, .textarea .checkbox-item .label-radio::after, .textarea .radiobutton-item .label-radio::after, .combobox .checkbox-item .label-radio::after, .combobox .radiobutton-item .label-radio::after, .checkbox .checkbox-item .label-radio::after, .checkbox .radiobutton-item .label-radio::after, .radiobutton .checkbox-item .label-radio::after, .radiobutton .radiobutton-item .label-radio::after {
   content: "";
   background: #1cbe9d;
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  position: absolute;
-  top: 0.32rem;
+  top: 0.17rem;
   left: 0.33rem;
-  opacity: 0;
-  transform: scale(2);
-  transition: transform 0.4s linear, opacity 0.4s linear;
 }
 
 .checkbox-group, .radiobutton-group {
