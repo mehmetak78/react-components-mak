@@ -15,10 +15,14 @@ const PageForm1 = () => {
     surname: "",
     email: "",
     city: "",
-    checkbox1: true,
-    checkbox2: false,
-    checkbox3: false,
+    checkBoxGroup1: {
+      checkbox1: true,
+      checkbox2: false,
+      checkbox3: false,
+    },
+    radioButtonGroup1Selected: "radio1",
     combo1SelectedItems: new Set()
+
   });
 
 
@@ -30,11 +34,14 @@ const PageForm1 = () => {
   const onChange = (e => {
     console.log("OnChange"+e.target.id);
     if (e.target.type==="checkbox") {
-      setFormData({...formData, [e.target.name]: e.target.checked})
+      setFormData({...formData, checkBoxGroup1:{...formData.checkBoxGroup1,[e.target.id]: e.target.checked }})
     }
-
+   else if (e.target.type==="radio") {
+      console.log("here");
+      setFormData({...formData, radioButtonGroup1Selected:e.target.id} )
+    }
     else {
-      setFormData({...formData, [e.target.name]: e.target.value})
+      setFormData({...formData, [e.target.id]: e.target.value})
     }
   })
 
@@ -45,6 +52,7 @@ const PageForm1 = () => {
         <TextBox
           // className="row3"
           label="Name:"
+          id="name"
           name="name"
           value={formData.name}
           type="text"
@@ -55,6 +63,7 @@ const PageForm1 = () => {
         <TextArea
           className="row1"
           label="Surname:"
+          id="surname"
           name="surname"
           value={formData.surname}
           type="text"
@@ -65,6 +74,7 @@ const PageForm1 = () => {
         />
         <TextBox
           label="Email:"
+          id="email"
           name="email"
           value={formData.email}
           type="text"
@@ -74,6 +84,7 @@ const PageForm1 = () => {
         />
         <TextBox
           label="City:"
+          id="city"
           name="city"
           value={formData.city}
           type="text"
@@ -83,6 +94,7 @@ const PageForm1 = () => {
         />
         <Combobox
           label="Combo:"
+          id="cb1"
           name="cb1"
           type="text"
           autoComplete="surname"
@@ -101,9 +113,9 @@ const PageForm1 = () => {
         <CheckBoxGroup
           items = {
             [
-              {id: "checkbox1", name: "checkbox1", checked:formData["checkbox1"] ,label: "Check Here It İs"},
-              {id: "checkbox2", name: "checkbox2", checked:formData["checkbox2"] , label: "Checkbox2 Here It İs"},
-              {id: "checkbox3", name: "checkbox3", checked:formData["checkbox3"] , label: "Checkbox3 Here It İs"},
+              {id: "checkbox1", name: "checkbox1", checked:formData.checkBoxGroup1["checkbox1"] ,label: "Check Here It İs"},
+              {id: "checkbox2", name: "checkbox2", checked:formData.checkBoxGroup1["checkbox2"] , label: "Checkbox2 Here It İs"},
+              {id: "checkbox3", name: "checkbox3", checked:formData.checkBoxGroup1["checkbox3"] , label: "Checkbox3 Here It İs"},
             ]
           }
           //flex
@@ -111,12 +123,12 @@ const PageForm1 = () => {
         />
 
         <RadioButtonGroup
-          groupName = "radiourGroup1"
+          groupName = "radioButtonGroup1"
           items = {
             [
-              {id: "radio1", name: "checkbox1", label: "Radio Here It İs"},
-              {id: "radio2", name: "checkbox2",  label: "Radio Button 1 Here It İs"},
-              {id: "radio3", name: "checkbox3",  label: "Radio Button 2 Here It İs"},
+              {id: "radio1", name: "radio1", checked:formData.radioButtonGroup1Selected==="radio1", label: "Radio Here It İs"},
+              {id: "radio2", name: "radio2", checked:formData.radioButtonGroup1Selected==="radio2", label: "Radio Button 1 Here It İs"},
+              {id: "radio3", name: "radio3", checked:formData.radioButtonGroup1Selected==="radio3", label: "Radio Button 2 Here It İs"},
             ]
           }
           //flex

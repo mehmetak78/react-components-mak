@@ -739,7 +739,6 @@ textarea:focus,
   flex-wrap: wrap;
   background: none;
   position: relative;
-  z-index: 999;
 }
 .checkbox-group .group-label, .radiobutton-group .group-label {
   background: #f2f2f2;

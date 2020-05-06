@@ -22,7 +22,7 @@ const RadioButtonGroup = (props) => {
       {items.map(item => (
         <div className= {"radiobutton " +className} >
           <div className="radiobutton-item" >
-            <input type="radio" id={item.id} name={groupName} onClick={radioButtonClicked} onChange={onChange}/>
+            <input type="radio" id={item.id} name={groupName} checked={item.checked} onClick={radioButtonClicked} onChange={onChange}/>
             <label htmlFor={item.id}>{item.label}</label>
           </div>
         </div>
