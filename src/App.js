@@ -10,11 +10,11 @@ import PageForm1 from "./pages/PageForm1";
 window.onclick = function(event) {
   // console.log("App.window.onClick()");
   // console.log(event.target.classList);
-  if (!event.target.classList.contains("combo-main")) {
+  if (!event.target.classList.contains("combo-input")) {
     closeAllComboItems();
   }
   if (
-    !event.target.classList.contains("date-picker-main")
+    !event.target.classList.contains("date-picker-input")
     && !event.target.classList.contains("left-button")
     && !event.target.classList.contains("right-button")
 ) {
