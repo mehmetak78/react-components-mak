@@ -6,6 +6,7 @@ import {Combobox} from "../components/formComponents/ComboBox";
 import FormButtons from "../components/formComponents/FormButtons";
 import {CheckBoxGroup} from "../components/formComponents/CheckBoxGroup";
 import {RadioButtonGroup} from "../components/formComponents/RadioButtonGroup";
+import DatePicker from "../components/formComponents/DatePicker";
 
 
 const PageForm1 = () => {
@@ -135,6 +136,11 @@ const PageForm1 = () => {
           }
           flex
           onChange={onChange}
+        />
+
+        <DatePicker
+          name="tarih"
+          label="Tarih:"
         />
 
         <FormButtons

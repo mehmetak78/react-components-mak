@@ -443,7 +443,7 @@
   padding: 0.2rem 0.7rem;
   text-align: center;
   margin: 0.3rem;
-  background: #4488ff;
+  background: #f2f2f2;
   color: #333;
   border-radius: 5px;
 }
@@ -473,28 +473,6 @@
 https://www.w3schools.com/html/html_form_input_types.asp
 Here are the different input types you can use in HTML:
 
-<input type="button">
-<input type="checkbox">
-<input type="color">
-<input type="date">
-<input type="datetime-local">
-<input type="email">
-<input type="file">
-<input type="hidden">
-<input type="image">
-<input type="month">
-<input type="number">
-<input type="password">
-<input type="radio">
-<input type="range">
-<input type="reset">
-<input type="search">
-<input type="submit">
-<input type="tel">
-<input type="text">
-<input type="time">
-<input type="url">
-<input type="week">
 */
 .form label {
   color: #2222dd;
@@ -513,19 +491,12 @@ Here are the different input types you can use in HTML:
   margin-bottom: 1rem;
 }
 
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=date],
-input[type=datetime],
-input[type=number],
-input[type=search],
-input[type=time],
-input[type=url],
+input,
 textarea,
-.combo-main,
+.combo-input,
 .checkbox-group,
-.radiobutton-group {
+.radiobutton-group,
+.date-picker-input {
   color: #2222dd;
   background: #fff;
   padding: 0.4rem;
@@ -535,39 +506,25 @@ textarea,
   transition: all 0.3s ease-in-out;
   outline: none;
 }
-input[type=text]:hover,
-input[type=email]:hover,
-input[type=password]:hover,
-input[type=date]:hover,
-input[type=datetime]:hover,
-input[type=number]:hover,
-input[type=search]:hover,
-input[type=time]:hover,
-input[type=url]:hover,
+input:hover,
 textarea:hover,
-.combo-main:hover,
+.combo-input:hover,
 .checkbox-group:hover,
-.radiobutton-group:hover {
+.radiobutton-group:hover,
+.date-picker-input:hover {
   border: 1px solid #88D5E9;
 }
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
-input[type=date]:focus,
-input[type=datetime]:focus,
-input[type=number]:focus,
-input[type=search]:focus,
-input[type=time]:focus,
-input[type=url]:focus,
+input:focus,
 textarea:focus,
-.combo-main:focus,
+.combo-input:focus,
 .checkbox-group:focus,
-.radiobutton-group:focus {
+.radiobutton-group:focus,
+.date-picker-input:focus {
   box-shadow: 0 0 12px #88D5E9;
   border: 1px solid #88D5E9;
 }
 
-.textbox, .textarea, .combobox, .checkbox, .radiobutton {
+.textbox, .textarea, .combobox, .checkbox, .radiobutton, .date-picker {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -576,50 +533,50 @@ textarea:focus,
   height: 100%;
   position: relative;
 }
-.textbox label, .textarea label, .combobox label, .checkbox label, .radiobutton label {
+.textbox label, .textarea label, .combobox label, .checkbox label, .radiobutton label, .date-picker label {
   text-align: right;
   padding-right: 0.2rem;
 }
-.textbox input, .textbox textarea, .textbox .checkbox-item, .textarea input, .textarea textarea, .textarea .checkbox-item, .combobox input, .combobox textarea, .combobox .checkbox-item, .checkbox input, .checkbox textarea, .checkbox .checkbox-item, .radiobutton input, .radiobutton textarea, .radiobutton .checkbox-item {
+.textbox input, .textbox textarea, .textbox .checkbox-item, .textarea input, .textarea textarea, .textarea .checkbox-item, .combobox input, .combobox textarea, .combobox .checkbox-item, .checkbox input, .checkbox textarea, .checkbox .checkbox-item, .radiobutton input, .radiobutton textarea, .radiobutton .checkbox-item, .date-picker input, .date-picker textarea, .date-picker .checkbox-item {
   flex-shrink: 1;
   width: 100%;
 }
-.textbox input:required ~ label, .textbox textarea:required ~ label, .textbox .checkbox-item:required ~ label, .textarea input:required ~ label, .textarea textarea:required ~ label, .textarea .checkbox-item:required ~ label, .combobox input:required ~ label, .combobox textarea:required ~ label, .combobox .checkbox-item:required ~ label, .checkbox input:required ~ label, .checkbox textarea:required ~ label, .checkbox .checkbox-item:required ~ label, .radiobutton input:required ~ label, .radiobutton textarea:required ~ label, .radiobutton .checkbox-item:required ~ label {
+.textbox input:required ~ label, .textbox textarea:required ~ label, .textbox .checkbox-item:required ~ label, .textarea input:required ~ label, .textarea textarea:required ~ label, .textarea .checkbox-item:required ~ label, .combobox input:required ~ label, .combobox textarea:required ~ label, .combobox .checkbox-item:required ~ label, .checkbox input:required ~ label, .checkbox textarea:required ~ label, .checkbox .checkbox-item:required ~ label, .radiobutton input:required ~ label, .radiobutton textarea:required ~ label, .radiobutton .checkbox-item:required ~ label, .date-picker input:required ~ label, .date-picker textarea:required ~ label, .date-picker .checkbox-item:required ~ label {
   padding-right: 1.2rem;
   color: #ff0000;
 }
-.textbox input:required ~ label::after, .textbox textarea:required ~ label::after, .textbox .checkbox-item:required ~ label::after, .textarea input:required ~ label::after, .textarea textarea:required ~ label::after, .textarea .checkbox-item:required ~ label::after, .combobox input:required ~ label::after, .combobox textarea:required ~ label::after, .combobox .checkbox-item:required ~ label::after, .checkbox input:required ~ label::after, .checkbox textarea:required ~ label::after, .checkbox .checkbox-item:required ~ label::after, .radiobutton input:required ~ label::after, .radiobutton textarea:required ~ label::after, .radiobutton .checkbox-item:required ~ label::after {
+.textbox input:required ~ label::after, .textbox textarea:required ~ label::after, .textbox .checkbox-item:required ~ label::after, .textarea input:required ~ label::after, .textarea textarea:required ~ label::after, .textarea .checkbox-item:required ~ label::after, .combobox input:required ~ label::after, .combobox textarea:required ~ label::after, .combobox .checkbox-item:required ~ label::after, .checkbox input:required ~ label::after, .checkbox textarea:required ~ label::after, .checkbox .checkbox-item:required ~ label::after, .radiobutton input:required ~ label::after, .radiobutton textarea:required ~ label::after, .radiobutton .checkbox-item:required ~ label::after, .date-picker input:required ~ label::after, .date-picker textarea:required ~ label::after, .date-picker .checkbox-item:required ~ label::after {
   position: absolute;
   font-size: 0.7rem;
   content: "(*)";
 }
-.textbox textarea, .textarea textarea, .combobox textarea, .checkbox textarea, .radiobutton textarea {
-  height: calc(100% - 1rem);
+.textbox textarea, .textarea textarea, .combobox textarea, .checkbox textarea, .radiobutton textarea, .date-picker textarea {
+  height: calc(100% );
   resize: none;
 }
-.textbox .required ~ label, .textarea .required ~ label, .combobox .required ~ label, .checkbox .required ~ label, .radiobutton .required ~ label {
+.textbox .required ~ label, .textarea .required ~ label, .combobox .required ~ label, .checkbox .required ~ label, .radiobutton .required ~ label, .date-picker .required ~ label {
   padding-right: 1.2rem;
   color: #ff0000;
 }
-.textbox .required ~ label::after, .textarea .required ~ label::after, .combobox .required ~ label::after, .checkbox .required ~ label::after, .radiobutton .required ~ label::after {
+.textbox .required ~ label::after, .textarea .required ~ label::after, .combobox .required ~ label::after, .checkbox .required ~ label::after, .radiobutton .required ~ label::after, .date-picker .required ~ label::after {
   position: absolute;
   font-size: 0.7rem;
   content: "(*)";
 }
-.textbox .combo-main, .textarea .combo-main, .combobox .combo-main, .checkbox .combo-main, .radiobutton .combo-main {
+.textbox .combo-input, .textarea .combo-input, .combobox .combo-input, .checkbox .combo-input, .radiobutton .combo-input, .date-picker .combo-input {
   position: relative;
   cursor: pointer;
   width: 100%;
   padding: 0.5rem;
   margin: 0;
 }
-.textbox .combo-main::after, .textarea .combo-main::after, .combobox .combo-main::after, .checkbox .combo-main::after, .radiobutton .combo-main::after {
+.textbox .combo-input::after, .textarea .combo-input::after, .combobox .combo-input::after, .checkbox .combo-input::after, .radiobutton .combo-input::after, .date-picker .combo-input::after {
   content: "...";
   position: absolute;
   right: 0.5rem;
   line-height: 0.8rem;
 }
-.textbox .combo-main .combo-items, .textarea .combo-main .combo-items, .combobox .combo-main .combo-items, .checkbox .combo-main .combo-items, .radiobutton .combo-main .combo-items {
+.textbox .combo-input .combo-items, .textarea .combo-input .combo-items, .combobox .combo-input .combo-items, .checkbox .combo-input .combo-items, .radiobutton .combo-input .combo-items, .date-picker .combo-input .combo-items {
   transition: transform 400ms ease-in-out;
   transform-origin: top;
   background: #fff;
@@ -633,51 +590,51 @@ textarea:focus,
   z-index: 999;
   transform: scale(1, 0);
 }
-.textbox .combo-main .combo-items:hover, .textarea .combo-main .combo-items:hover, .combobox .combo-main .combo-items:hover, .checkbox .combo-main .combo-items:hover, .radiobutton .combo-main .combo-items:hover {
+.textbox .combo-input .combo-items:hover, .textarea .combo-input .combo-items:hover, .combobox .combo-input .combo-items:hover, .checkbox .combo-input .combo-items:hover, .radiobutton .combo-input .combo-items:hover, .date-picker .combo-input .combo-items:hover {
   border: solid 1px #88D5E9;
 }
-.textbox .combo-main .combo-items .combo-item, .textarea .combo-main .combo-items .combo-item, .combobox .combo-main .combo-items .combo-item, .checkbox .combo-main .combo-items .combo-item, .radiobutton .combo-main .combo-items .combo-item {
+.textbox .combo-input .combo-items .combo-item, .textarea .combo-input .combo-items .combo-item, .combobox .combo-input .combo-items .combo-item, .checkbox .combo-input .combo-items .combo-item, .radiobutton .combo-input .combo-items .combo-item, .date-picker .combo-input .combo-items .combo-item {
   padding: 0.4rem;
 }
-.textbox .combo-main .combo-items .combo-item:hover, .textarea .combo-main .combo-items .combo-item:hover, .combobox .combo-main .combo-items .combo-item:hover, .checkbox .combo-main .combo-items .combo-item:hover, .radiobutton .combo-main .combo-items .combo-item:hover {
+.textbox .combo-input .combo-items .combo-item:hover, .textarea .combo-input .combo-items .combo-item:hover, .combobox .combo-input .combo-items .combo-item:hover, .checkbox .combo-input .combo-items .combo-item:hover, .radiobutton .combo-input .combo-items .combo-item:hover, .date-picker .combo-input .combo-items .combo-item:hover {
   background: #88D5E9;
 }
-.textbox .combo-main .combo-items .combo-item-selected, .textarea .combo-main .combo-items .combo-item-selected, .combobox .combo-main .combo-items .combo-item-selected, .checkbox .combo-main .combo-items .combo-item-selected, .radiobutton .combo-main .combo-items .combo-item-selected {
+.textbox .combo-input .combo-items .combo-item-selected, .textarea .combo-input .combo-items .combo-item-selected, .combobox .combo-input .combo-items .combo-item-selected, .checkbox .combo-input .combo-items .combo-item-selected, .radiobutton .combo-input .combo-items .combo-item-selected, .date-picker .combo-input .combo-items .combo-item-selected {
   background: #88D5E9;
   position: relative;
 }
-.textbox .combo-main .combo-items .combo-item-selected::after, .textarea .combo-main .combo-items .combo-item-selected::after, .combobox .combo-main .combo-items .combo-item-selected::after, .checkbox .combo-main .combo-items .combo-item-selected::after, .radiobutton .combo-main .combo-items .combo-item-selected::after {
+.textbox .combo-input .combo-items .combo-item-selected::after, .textarea .combo-input .combo-items .combo-item-selected::after, .combobox .combo-input .combo-items .combo-item-selected::after, .checkbox .combo-input .combo-items .combo-item-selected::after, .radiobutton .combo-input .combo-items .combo-item-selected::after, .date-picker .combo-input .combo-items .combo-item-selected::after {
   content: "√";
   position: absolute;
   right: 1rem;
 }
-.textbox .combo-main .combo-items-active, .textarea .combo-main .combo-items-active, .combobox .combo-main .combo-items-active, .checkbox .combo-main .combo-items-active, .radiobutton .combo-main .combo-items-active {
+.textbox .combo-input .combo-items-active, .textarea .combo-input .combo-items-active, .combobox .combo-input .combo-items-active, .checkbox .combo-input .combo-items-active, .radiobutton .combo-input .combo-items-active, .date-picker .combo-input .combo-items-active {
   transform: scale(1, 1);
   box-shadow: 0 0 12px #88D5E9;
   border: 1px solid #88D5E9;
 }
-.textbox .checkbox-item, .textbox .radiobutton-item, .textarea .checkbox-item, .textarea .radiobutton-item, .combobox .checkbox-item, .combobox .radiobutton-item, .checkbox .checkbox-item, .checkbox .radiobutton-item, .radiobutton .checkbox-item, .radiobutton .radiobutton-item {
+.textbox .checkbox-item, .textbox .radiobutton-item, .textarea .checkbox-item, .textarea .radiobutton-item, .combobox .checkbox-item, .combobox .radiobutton-item, .checkbox .checkbox-item, .checkbox .radiobutton-item, .radiobutton .checkbox-item, .radiobutton .radiobutton-item, .date-picker .checkbox-item, .date-picker .radiobutton-item {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   padding: 0 0.5rem;
 }
-.textbox .checkbox-item input, .textbox .radiobutton-item input, .textarea .checkbox-item input, .textarea .radiobutton-item input, .combobox .checkbox-item input, .combobox .radiobutton-item input, .checkbox .checkbox-item input, .checkbox .radiobutton-item input, .radiobutton .checkbox-item input, .radiobutton .radiobutton-item input {
+.textbox .checkbox-item input, .textbox .radiobutton-item input, .textarea .checkbox-item input, .textarea .radiobutton-item input, .combobox .checkbox-item input, .combobox .radiobutton-item input, .checkbox .checkbox-item input, .checkbox .radiobutton-item input, .radiobutton .checkbox-item input, .radiobutton .radiobutton-item input, .date-picker .checkbox-item input, .date-picker .radiobutton-item input {
   display: none;
 }
-.textbox .checkbox-item input:checked + label:after, .textbox .radiobutton-item input:checked + label:after, .textarea .checkbox-item input:checked + label:after, .textarea .radiobutton-item input:checked + label:after, .combobox .checkbox-item input:checked + label:after, .combobox .radiobutton-item input:checked + label:after, .checkbox .checkbox-item input:checked + label:after, .checkbox .radiobutton-item input:checked + label:after, .radiobutton .checkbox-item input:checked + label:after, .radiobutton .radiobutton-item input:checked + label:after {
+.textbox .checkbox-item input:checked + label:after, .textbox .radiobutton-item input:checked + label:after, .textarea .checkbox-item input:checked + label:after, .textarea .radiobutton-item input:checked + label:after, .combobox .checkbox-item input:checked + label:after, .combobox .radiobutton-item input:checked + label:after, .checkbox .checkbox-item input:checked + label:after, .checkbox .radiobutton-item input:checked + label:after, .radiobutton .checkbox-item input:checked + label:after, .radiobutton .radiobutton-item input:checked + label:after, .date-picker .checkbox-item input:checked + label:after, .date-picker .radiobutton-item input:checked + label:after {
   opacity: 1;
   transform: scale(1);
 }
-.textbox .checkbox-item .label-checkbox, .textbox .checkbox-item .label-radio, .textbox .radiobutton-item .label-checkbox, .textbox .radiobutton-item .label-radio, .textarea .checkbox-item .label-checkbox, .textarea .checkbox-item .label-radio, .textarea .radiobutton-item .label-checkbox, .textarea .radiobutton-item .label-radio, .combobox .checkbox-item .label-checkbox, .combobox .checkbox-item .label-radio, .combobox .radiobutton-item .label-checkbox, .combobox .radiobutton-item .label-radio, .checkbox .checkbox-item .label-checkbox, .checkbox .checkbox-item .label-radio, .checkbox .radiobutton-item .label-checkbox, .checkbox .radiobutton-item .label-radio, .radiobutton .checkbox-item .label-checkbox, .radiobutton .checkbox-item .label-radio, .radiobutton .radiobutton-item .label-checkbox, .radiobutton .radiobutton-item .label-radio {
+.textbox .checkbox-item .label-checkbox, .textbox .checkbox-item .label-radio, .textbox .radiobutton-item .label-checkbox, .textbox .radiobutton-item .label-radio, .textarea .checkbox-item .label-checkbox, .textarea .checkbox-item .label-radio, .textarea .radiobutton-item .label-checkbox, .textarea .radiobutton-item .label-radio, .combobox .checkbox-item .label-checkbox, .combobox .checkbox-item .label-radio, .combobox .radiobutton-item .label-checkbox, .combobox .radiobutton-item .label-radio, .checkbox .checkbox-item .label-checkbox, .checkbox .checkbox-item .label-radio, .checkbox .radiobutton-item .label-checkbox, .checkbox .radiobutton-item .label-radio, .radiobutton .checkbox-item .label-checkbox, .radiobutton .checkbox-item .label-radio, .radiobutton .radiobutton-item .label-checkbox, .radiobutton .radiobutton-item .label-radio, .date-picker .checkbox-item .label-checkbox, .date-picker .checkbox-item .label-radio, .date-picker .radiobutton-item .label-checkbox, .date-picker .radiobutton-item .label-radio {
   cursor: pointer;
   font-size: 1rem;
   text-align: center;
   position: relative;
   padding-left: 32px;
 }
-.textbox .checkbox-item .label-checkbox:before, .textbox .checkbox-item .label-radio:before, .textbox .radiobutton-item .label-checkbox:before, .textbox .radiobutton-item .label-radio:before, .textarea .checkbox-item .label-checkbox:before, .textarea .checkbox-item .label-radio:before, .textarea .radiobutton-item .label-checkbox:before, .textarea .radiobutton-item .label-radio:before, .combobox .checkbox-item .label-checkbox:before, .combobox .checkbox-item .label-radio:before, .combobox .radiobutton-item .label-checkbox:before, .combobox .radiobutton-item .label-radio:before, .checkbox .checkbox-item .label-checkbox:before, .checkbox .checkbox-item .label-radio:before, .checkbox .radiobutton-item .label-checkbox:before, .checkbox .radiobutton-item .label-radio:before, .radiobutton .checkbox-item .label-checkbox:before, .radiobutton .checkbox-item .label-radio:before, .radiobutton .radiobutton-item .label-checkbox:before, .radiobutton .radiobutton-item .label-radio:before {
+.textbox .checkbox-item .label-checkbox:before, .textbox .checkbox-item .label-radio:before, .textbox .radiobutton-item .label-checkbox:before, .textbox .radiobutton-item .label-radio:before, .textarea .checkbox-item .label-checkbox:before, .textarea .checkbox-item .label-radio:before, .textarea .radiobutton-item .label-checkbox:before, .textarea .radiobutton-item .label-radio:before, .combobox .checkbox-item .label-checkbox:before, .combobox .checkbox-item .label-radio:before, .combobox .radiobutton-item .label-checkbox:before, .combobox .radiobutton-item .label-radio:before, .checkbox .checkbox-item .label-checkbox:before, .checkbox .checkbox-item .label-radio:before, .checkbox .radiobutton-item .label-checkbox:before, .checkbox .radiobutton-item .label-radio:before, .radiobutton .checkbox-item .label-checkbox:before, .radiobutton .checkbox-item .label-radio:before, .radiobutton .radiobutton-item .label-checkbox:before, .radiobutton .radiobutton-item .label-radio:before, .date-picker .checkbox-item .label-checkbox:before, .date-picker .checkbox-item .label-radio:before, .date-picker .radiobutton-item .label-checkbox:before, .date-picker .radiobutton-item .label-radio:before {
   content: "";
   border: 2px solid #1cbe9d;
   height: 22px;
@@ -686,25 +643,25 @@ textarea:focus,
   top: -3px;
   left: 0;
 }
-.textbox .checkbox-item .label-checkbox:after, .textbox .checkbox-item .label-radio:after, .textbox .radiobutton-item .label-checkbox:after, .textbox .radiobutton-item .label-radio:after, .textarea .checkbox-item .label-checkbox:after, .textarea .checkbox-item .label-radio:after, .textarea .radiobutton-item .label-checkbox:after, .textarea .radiobutton-item .label-radio:after, .combobox .checkbox-item .label-checkbox:after, .combobox .checkbox-item .label-radio:after, .combobox .radiobutton-item .label-checkbox:after, .combobox .radiobutton-item .label-radio:after, .checkbox .checkbox-item .label-checkbox:after, .checkbox .checkbox-item .label-radio:after, .checkbox .radiobutton-item .label-checkbox:after, .checkbox .radiobutton-item .label-radio:after, .radiobutton .checkbox-item .label-checkbox:after, .radiobutton .checkbox-item .label-radio:after, .radiobutton .radiobutton-item .label-checkbox:after, .radiobutton .radiobutton-item .label-radio:after {
+.textbox .checkbox-item .label-checkbox:after, .textbox .checkbox-item .label-radio:after, .textbox .radiobutton-item .label-checkbox:after, .textbox .radiobutton-item .label-radio:after, .textarea .checkbox-item .label-checkbox:after, .textarea .checkbox-item .label-radio:after, .textarea .radiobutton-item .label-checkbox:after, .textarea .radiobutton-item .label-radio:after, .combobox .checkbox-item .label-checkbox:after, .combobox .checkbox-item .label-radio:after, .combobox .radiobutton-item .label-checkbox:after, .combobox .radiobutton-item .label-radio:after, .checkbox .checkbox-item .label-checkbox:after, .checkbox .checkbox-item .label-radio:after, .checkbox .radiobutton-item .label-checkbox:after, .checkbox .radiobutton-item .label-radio:after, .radiobutton .checkbox-item .label-checkbox:after, .radiobutton .checkbox-item .label-radio:after, .radiobutton .radiobutton-item .label-checkbox:after, .radiobutton .radiobutton-item .label-radio:after, .date-picker .checkbox-item .label-checkbox:after, .date-picker .checkbox-item .label-radio:after, .date-picker .radiobutton-item .label-checkbox:after, .date-picker .radiobutton-item .label-radio:after {
   position: absolute;
   opacity: 0;
   transform: scale(0.1);
   transition: transform 0.3s linear, opacity 0.3s ease-in-out;
   color: #1cbe9d;
 }
-.textbox .checkbox-item .label-checkbox:before, .textbox .radiobutton-item .label-checkbox:before, .textarea .checkbox-item .label-checkbox:before, .textarea .radiobutton-item .label-checkbox:before, .combobox .checkbox-item .label-checkbox:before, .combobox .radiobutton-item .label-checkbox:before, .checkbox .checkbox-item .label-checkbox:before, .checkbox .radiobutton-item .label-checkbox:before, .radiobutton .checkbox-item .label-checkbox:before, .radiobutton .radiobutton-item .label-checkbox:before {
+.textbox .checkbox-item .label-checkbox:before, .textbox .radiobutton-item .label-checkbox:before, .textarea .checkbox-item .label-checkbox:before, .textarea .radiobutton-item .label-checkbox:before, .combobox .checkbox-item .label-checkbox:before, .combobox .radiobutton-item .label-checkbox:before, .checkbox .checkbox-item .label-checkbox:before, .checkbox .radiobutton-item .label-checkbox:before, .radiobutton .checkbox-item .label-checkbox:before, .radiobutton .radiobutton-item .label-checkbox:before, .date-picker .checkbox-item .label-checkbox:before, .date-picker .radiobutton-item .label-checkbox:before {
   border-radius: 3px;
 }
-.textbox .checkbox-item .label-checkbox:after, .textbox .radiobutton-item .label-checkbox:after, .textarea .checkbox-item .label-checkbox:after, .textarea .radiobutton-item .label-checkbox:after, .combobox .checkbox-item .label-checkbox:after, .combobox .radiobutton-item .label-checkbox:after, .checkbox .checkbox-item .label-checkbox:after, .checkbox .radiobutton-item .label-checkbox:after, .radiobutton .checkbox-item .label-checkbox:after, .radiobutton .radiobutton-item .label-checkbox:after {
+.textbox .checkbox-item .label-checkbox:after, .textbox .radiobutton-item .label-checkbox:after, .textarea .checkbox-item .label-checkbox:after, .textarea .radiobutton-item .label-checkbox:after, .combobox .checkbox-item .label-checkbox:after, .combobox .radiobutton-item .label-checkbox:after, .checkbox .checkbox-item .label-checkbox:after, .checkbox .radiobutton-item .label-checkbox:after, .radiobutton .checkbox-item .label-checkbox:after, .radiobutton .radiobutton-item .label-checkbox:after, .date-picker .checkbox-item .label-checkbox:after, .date-picker .radiobutton-item .label-checkbox:after {
   content: "√";
   top: 2px;
   left: 8px;
 }
-.textbox .checkbox-item .label-radio::before, .textbox .radiobutton-item .label-radio::before, .textarea .checkbox-item .label-radio::before, .textarea .radiobutton-item .label-radio::before, .combobox .checkbox-item .label-radio::before, .combobox .radiobutton-item .label-radio::before, .checkbox .checkbox-item .label-radio::before, .checkbox .radiobutton-item .label-radio::before, .radiobutton .checkbox-item .label-radio::before, .radiobutton .radiobutton-item .label-radio::before {
+.textbox .checkbox-item .label-radio::before, .textbox .radiobutton-item .label-radio::before, .textarea .checkbox-item .label-radio::before, .textarea .radiobutton-item .label-radio::before, .combobox .checkbox-item .label-radio::before, .combobox .radiobutton-item .label-radio::before, .checkbox .checkbox-item .label-radio::before, .checkbox .radiobutton-item .label-radio::before, .radiobutton .checkbox-item .label-radio::before, .radiobutton .radiobutton-item .label-radio::before, .date-picker .checkbox-item .label-radio::before, .date-picker .radiobutton-item .label-radio::before {
   border-radius: 50%;
 }
-.textbox .checkbox-item .label-radio::after, .textbox .radiobutton-item .label-radio::after, .textarea .checkbox-item .label-radio::after, .textarea .radiobutton-item .label-radio::after, .combobox .checkbox-item .label-radio::after, .combobox .radiobutton-item .label-radio::after, .checkbox .checkbox-item .label-radio::after, .checkbox .radiobutton-item .label-radio::after, .radiobutton .checkbox-item .label-radio::after, .radiobutton .radiobutton-item .label-radio::after {
+.textbox .checkbox-item .label-radio::after, .textbox .radiobutton-item .label-radio::after, .textarea .checkbox-item .label-radio::after, .textarea .radiobutton-item .label-radio::after, .combobox .checkbox-item .label-radio::after, .combobox .radiobutton-item .label-radio::after, .checkbox .checkbox-item .label-radio::after, .checkbox .radiobutton-item .label-radio::after, .radiobutton .checkbox-item .label-radio::after, .radiobutton .radiobutton-item .label-radio::after, .date-picker .checkbox-item .label-radio::after, .date-picker .radiobutton-item .label-radio::after {
   content: "•";
   font-size: 3.5rem;
   line-height: 18px;
@@ -762,6 +719,105 @@ textarea:focus,
 
 .form-btn-group-stop-hover {
   pointer-events: none;
+}
+
+.date-picker-input {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0;
+}
+.date-picker-input::after {
+  content: "...";
+  position: absolute;
+  right: 0.5rem;
+  line-height: 0.8rem;
+}
+.date-picker-input .date-picker-selector {
+  transition: transform 400ms ease-in-out;
+  transform-origin: top;
+  background: #fff;
+  border: solid 1px #BEBEBE;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  transform: scale(1, 0);
+  cursor: auto;
+}
+.date-picker-input .date-picker-selector:hover {
+  border: solid 1px #88D5E9;
+}
+.date-picker-input .date-picker-selector .date-picker-month-selector {
+  display: flex;
+  padding: 0.5rem 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.date-picker-input .date-picker-selector .date-picker-month-selector .left-button, .date-picker-input .date-picker-selector .date-picker-month-selector .right-button {
+  cursor: pointer;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}
+.date-picker-input .date-picker-selector .date-picker-month-selector .left-button:hover {
+  transform: scale(1.2);
+}
+.date-picker-input .date-picker-selector .date-picker-month-selector .right-button:hover {
+  transform: scale(1.2);
+}
+.date-picker-input .date-picker-selector .date-picker-month-selector .date-picker-month {
+  padding: 0.5rem;
+  font-weight: bold;
+}
+.date-picker-input .date-picker-selector .date-picker-day-labels {
+  display: flex;
+  padding: 1rem 0;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px #3377ff solid;
+  border-bottom: 1px #3377ff solid;
+  background: #77ccff;
+}
+.date-picker-input .date-picker-selector .date-picker-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  justify-content: center;
+  align-items: center;
+}
+.date-picker-input .date-picker-selector .date-picker-days .day {
+  cursor: pointer;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+.date-picker-input .date-picker-selector .date-picker-days .day-today {
+  border: 1px #bb33ff solid;
+  padding: 0;
+  margin: 0 0.3rem;
+  border-radius: 80%;
+}
+.date-picker-input .date-picker-selector .date-picker-days .day-active {
+  background: #77ccff;
+  padding: 0;
+  margin: 0 0.3rem;
+  border-radius: 80%;
+}
+.date-picker-input .date-picker-selector .date-picker-days .pre-month-day, .date-picker-input .date-picker-selector .date-picker-days .next-month-day {
+  color: lightgray;
+}
+.date-picker-input .date-picker-selector-active {
+  transform: scale(1, 1);
+  box-shadow: 0 0 12px #88D5E9;
+  border: 1px solid #88D5E9;
 }
 
 .card-group {

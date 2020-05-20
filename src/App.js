@@ -3,15 +3,24 @@ import {Navbar,closeAllDropDown} from "./components/Navbar";
 import {closeAllComboItems} from "./components/formComponents/ComboBox";
 import {cancelFocusCheckBoxGroup} from "./components/formComponents/CheckBoxGroup";
 import {cancelFocusRadioButtonGroup} from "./components/formComponents/RadioButtonGroup";
+import {closeAllDatePickerSelectors} from "./components/formComponents/DatePicker";
 
 import PageForm1 from "./pages/PageForm1";
 
 window.onclick = function(event) {
   // console.log("App.window.onClick()");
-  // console.log(event.target.type);
+  // console.log(event.target.classList);
   if (!event.target.classList.contains("combo-main")) {
     closeAllComboItems();
   }
+  if (
+    !event.target.classList.contains("date-picker-main")
+    && !event.target.classList.contains("left-button")
+    && !event.target.classList.contains("right-button")
+) {
+    closeAllDatePickerSelectors();
+  }
+
   if (!event.target.classList.contains("nav-item")) {
     closeAllDropDown();
   }

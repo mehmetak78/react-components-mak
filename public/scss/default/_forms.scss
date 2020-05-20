@@ -2,28 +2,6 @@
 https://www.w3schools.com/html/html_form_input_types.asp
 Here are the different input types you can use in HTML:
 
-<input type="button">
-<input type="checkbox">
-<input type="color">
-<input type="date">
-<input type="datetime-local">
-<input type="email">
-<input type="file">
-<input type="hidden">
-<input type="image">
-<input type="month">
-<input type="number">
-<input type="password">
-<input type="radio">
-<input type="range">
-<input type="reset">
-<input type="search">
-<input type="submit">
-<input type="tel">
-<input type="text">
-<input type="time">
-<input type="url">
-<input type="week">
 */
 
 
@@ -54,19 +32,12 @@ Here are the different input types you can use in HTML:
 
 
 
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=date],
-input[type=datetime],
-input[type=number],
-input[type=search],
-input[type=time],
-input[type=url],
+input,
 textarea,
-.combo-main,
+.combo-input,
 .checkbox-group,
-.radiobutton-group
+.radiobutton-group,
+.date-picker-input
 {
   color: $color-text-primary;
   background: $color-input-background;
@@ -85,7 +56,7 @@ textarea,
   }
 }
 
-.textbox, .textarea, .combobox, .checkbox, .radiobutton {
+.textbox, .textarea, .combobox, .checkbox, .radiobutton, .date-picker {
   display: flex;
   flex-direction:row-reverse;
   align-items: center;
@@ -113,7 +84,7 @@ textarea,
     }
   }
   textarea {
-    height: calc(100% - 1rem);
+    height: calc(100% );
     resize: none;
   }
 
@@ -129,7 +100,7 @@ textarea,
     }
   }
 
-  .combo-main {
+  .combo-input {
     position: relative;
     cursor: pointer;
     width: 100% ;
@@ -297,4 +268,107 @@ textarea,
 
 .form-btn-group-stop-hover {
   pointer-events: none;
+}
+.date-picker-input {
+  position: relative;
+  cursor: pointer;
+  width: 100% ;
+  padding: 0.5rem;
+  margin:0;
+
+  &::after {
+    content: "...";
+    position: absolute;
+    right: 0.5rem;
+    line-height: 0.8rem;
+  }
+
+  .date-picker-selector {
+    transition : transform 400ms ease-in-out;
+    transform-origin: top;
+    background: $color-input-background;
+    border: solid 1px $color-input-border;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: calc(100%);
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transform: scale(1, 0);
+
+    cursor: auto;
+    &:hover {
+      border: solid 1px $color-input-hover;
+    }
+    .date-picker-month-selector {
+      display: flex;
+      padding: 0.5rem 0;
+      justify-content: space-between;
+      align-items: center;
+
+      .left-button, .right-button{
+        cursor: pointer;
+        padding: 0 1rem;
+        font-size: 1.5rem;
+        background-color: transparent;
+        border: none;
+        color: inherit;
+      }
+      .left-button:hover {
+        transform: scale(1.2);
+      }
+      .right-button:hover {
+        transform: scale(1.2);
+      }
+      .date-picker-month {
+        padding: 0.5rem;
+        font-weight: bold;
+      }
+    }
+    .date-picker-day-labels {
+      display:flex;
+      padding: 1rem 0;
+      justify-content: space-around;
+      align-items: center;
+      border-top: 1px $color-datepicker-day-labels-border solid;
+      border-bottom: 1px $color-datepicker-day-labels-border solid;
+      background: $color-datepicker-day-labels-bg;
+    }
+    .date-picker-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-column-gap: 0;
+      grid-row-gap: 0;
+      justify-content: center;
+      align-items: center;
+      .day {
+        cursor: pointer;
+        text-align: center;
+        padding: 0.5rem 0;
+      }
+      .day-today {
+        border: 1px $color-datepicker-day-today-border solid;
+        padding: 0;
+        margin: 0 0.3rem;
+        border-radius: 80%;
+      }
+      .day-active {
+        background: $color-datepicker-day-active-bg;
+        padding: 0;
+        margin: 0 0.3rem;
+        border-radius: 80%;
+      }
+      .pre-month-day, .next-month-day {
+        color: lightgray;
+      }
+    }
+
+  }
+  .date-picker-selector-active {
+    transform: scale(1, 1);
+    box-shadow: 0 0 12px $color-input-hover;
+    border: 1px solid $color-input-hover;
+  }
 }

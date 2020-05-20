@@ -95,7 +95,7 @@ const Combobox = (props) => {
   const classNameForRequired = required ? " required": " ";
   return (
     <div className= {"combobox " + className}>
-      <div className={"combo-main " + classNameForRequired} onClick={comboMainClicked}>
+      <div className={"combo-input " + classNameForRequired} onClick={comboMainClicked}>
         {comboText}
         <div className="combo-items ">
           {emptyItem}

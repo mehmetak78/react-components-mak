@@ -41,8 +41,12 @@ $color-input-selected: #88D5E9;
 $color-input-checkbox-border: #1cbe9d;
 $color-input-checkbox-check: #1cbe9d;
 
+$color-datepicker-day-labels-bg: #77ccff;
+$color-datepicker-day-labels-border: #3377ff;
+$color-datepicker-day-today-border: #bb33ff;
+$color-datepicker-day-active-bg: #77ccff;
 
-$color-badge-bg-primary:  #4488ff;
+$color-badge-bg-primary:  #f2f2f2;
 
 // Set text color based on bg
 @function set-text-color($color) {
